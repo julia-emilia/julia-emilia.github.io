@@ -1,0 +1,35 @@
+.LinkImages {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50px;
+    float: center;
+    margin-right: 10px;
+  }
+  .standard-text {
+    font-weight: bolder;
+  }
+  em {
+    color: red;
+    font-style: normal;
+  }
+
+  table {
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    cursor: pointer;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 16px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
