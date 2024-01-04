@@ -21,6 +21,14 @@
     <label for="outputVoltage">Output Voltage:</label>
     <input type="number" name="Vout" id="outputVoltage" />
     <br />
+    <label for="seriesDropdown">Choose an E-Series:</label>
+    <select id="seriesDropdown" name="seriesDropdown">
+      <option value="E03">E3</option>
+      <option value="E06">E6</option>
+      <option value="E12">E12</option>
+      <option value="E24">E24</option>
+    </select>
+    <br />
     <input
       type="button"
       value="Calculate Resistor Values"
@@ -30,6 +38,8 @@
     <div id="pullupRes"></div>
     <br />
     <div id="pulldownRes"></div>
+    <br />
+    <div id="RealVoltage"></div>
     <br />
     <a href="/index.html">Home page</a>
     <a href="#">Back to top</a>
