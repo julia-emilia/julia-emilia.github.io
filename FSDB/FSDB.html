@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formula Student Database</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <label for="disciplineDrop">Discipline:</label>
+    <select id="disciplineDrop" name="disciplineDrop">
+      <option value="ACC">Acceleration</option>
+      <option value="SKP">Skidpad</option>
+      <option value="END">Endurance</option>
+      <option value="ALL">Overall</option>
+    </select>
+    <label for="sortCategoryDrop">Sort By:</label>
+    <select id="sortCategoryDrop" name="sortCategoryDrop">
+      <option value="year">Year</option>
+      <option value="adj time">Adjusted time</option>
+      <option value="Time">Time</option>
+      <option value="points">Points</option>
+    </select>
+    <input type="button" value="Display table" onclick="database()" />
+
+    <script src="/public/xlsx.full.min.js"></script>
+    <script src="database.js"></script>
+  </body>
+</html>

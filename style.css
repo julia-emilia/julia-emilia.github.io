@@ -1,13 +1,74 @@
+@font-face {
+  font-family: Caladea;
+  src: url('fonts/Caladea/Caladea-Regular.ttf');
+}
+@font-face {
+  font-family: Caladea;
+  font-weight: bold;
+  src: url('fonts/Caladea/Caladea-Bold.ttf');
+}
+@font-face {
+  font-family: Caladea;
+  font-style: italic;
+  src: url('fonts/Caladea/Caladea-Italic.ttf');
+}
+@font-face {
+  font-family: Caladea;
+  font-weight: bold;
+  font-style: italic;
+  src: url('fonts/Caladea/Caladea-BoldItalic.ttf');
+}
+
 .LinkImages {
     width: 300px;
     height: 300px;
     object-fit: cover;
     border-radius: 50px;
-    float: center;
+    float: left;
     margin-right: 10px;
   }
-  .standard-text {
+  h1 {
+    font-family: Caladea, 'Times New Roman', Times, serif;
     font-weight: bolder;
+    font-size: 100;
+  }
+  h2 {
+    font-family: Caladea, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 100;
+  }
+  h3 {
+    font-family: Caladea, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 100;
+  }
+  h4 {
+    font-family: Caladea, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 100;
+  }
+  h5 {
+    font-family: Caladea, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 100;
+  }
+  h6 {
+    font-family: Caladea, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 100;
+  }
+  a {
+    font-family: Caladea, 'Times New Roman', Times, serif;
+  }
+  p {
+    font-family: Caladea, 'Times New Roman', Times, serif;
+  }
+  .standard-text {
+    font-family: Caladea, 'Times New Roman', Times, serif;    
+  }
+  .personal-text {
+    font-family: Caladea, 'Times New Roman', Times, serif;
+    font-style: italic;
   }
   em {
     color: red;
@@ -15,6 +76,7 @@
   }
 
   table {
+    font-family:'Lucida Console', Courier, monospace;
     border-spacing: 0;
     width: 100%;
     border: 1px solid #ddd;

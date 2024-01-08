@@ -12,6 +12,7 @@ function sortTable(n) {
     switching = true;
     //Set the sorting direction to ascending:
     dir = "asc";
+  
     /*Make a loop that will continue until
 no switching has been done:*/
     while (switching) {
@@ -27,6 +28,7 @@ first, which contains table headers):*/
   one from current row and one from the next:*/
         x = rows[i].getElementsByTagName("TD")[n];
         y = rows[i + 1].getElementsByTagName("TD")[n];
+        console.log(x)
         /*check if the two rows should switch place,
   based on the direction, asc or desc:*/
         if (dir == "asc") {

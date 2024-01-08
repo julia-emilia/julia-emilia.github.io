@@ -15,7 +15,7 @@
     <input type="button" value="Calculate square" onclick="outputSquare()" />
     <br />
     <div id="output"></div>
-    <h2>Resistors for Voltage divider</h2>
+    <h2 id="calc_voltage_divider">Resistors for Voltage divider</h2>
     <label for="inputVoltage">Input Voltage:</label>
     <input type="number" name="Vin" id="inputVoltage" /><br />
     <label for="outputVoltage">Output Voltage:</label>
@@ -40,6 +40,44 @@
     <div id="pulldownRes"></div>
     <br />
     <div id="RealVoltage"></div>
+    <h2>Cutoff frequency of RC-filter</h2>
+    <label for="CutoffRes">Resistor:</label>
+    <input type="number" name="CutoffRes" id="CutoffRes" /><br />
+    <label for="CutoffCap">Capacitor:</label>
+    <input type="number" name="CutoffCap" id="CutoffCap" />
+    <br />
+    <input
+      type="button"
+      value="Calculate Cutoff Frequency"
+      onclick="CutoffFrequency()"
+    />
+    <br />
+    <div id="CutoffFrequency"></div>
+    <br />
+    <h2>Resistor for specific filter</h2>
+    <label for="filterFrequency">Cutoff Frequency:</label>
+    <input type="number" name="filterFrequency" id="filterFrequency" /><br />
+    <label for="filterCap">Capacitor:</label>
+    <input type="number" name="filterCap" id="filterCap" />
+    <br />
+    <label for="filterEseriesDrop">Choose an E-Series:</label>
+    <select id="filterEseriesDrop" name="filterEseriesDrop">
+      <option value="E03">E3</option>
+      <option value="E06">E6</option>
+      <option value="E12">E12</option>
+      <option value="E24">E24</option>
+    </select>
+    <br />
+    <br />
+    <input
+      type="button"
+      value="Calculate filter resistor"
+      onclick="GetResistorForFilter()"
+    />
+    <br />
+    <div id="filterResistor"></div>
+    <br />
+    <div id="filterRealFreq"></div>
     <br />
     <a href="/index.html">Home page</a>
     <a href="#">Back to top</a>
