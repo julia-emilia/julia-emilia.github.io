@@ -27,16 +27,16 @@
     float: left;
     margin-right: 10px;
   }
-  h1 {
+  footer{
+    font-family: Caladea, 'Times New Roman', Times, serif;
+    font-size: 12pt;
+  }
+  h1,h2 {
     font-family: Caladea, 'Times New Roman', Times, serif;
     font-weight: bolder;
     font-size: 100;
   }
-  h2 {
-    font-family: Caladea, 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    font-size: 100;
-  }
+  
   h3 {
     font-family: Caladea, 'Times New Roman', Times, serif;
     font-weight: bolder;
