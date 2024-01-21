@@ -28,7 +28,6 @@ async function displayDatabase(){
     
     let CategoryToSortBy ='Date';
     let classIn = document.getElementById('classDrop').value;
-    let wetIn = document.getElementById('wetDrop').value;
     let direction = 'asc';
 
 
@@ -37,15 +36,11 @@ async function displayDatabase(){
     let filterValues = [];
     
     filterColumns= ['discipline'];
-    filterValues = ['SKP']
+    filterValues = ['ACC']
     //handle class filter
     if(classIn !='-ALL-'){
         filterColumns.push('class');
         filterValues.push(classIn);
-    }
-    if(wetIn !='-ALL-'){
-        filterColumns.push('wet');
-        filterValues.push(wetIn);
     }
     let inputTable = await database(filterColumns,filterValues,CategoryToSortBy,direction);
     // find the world records
