@@ -7,23 +7,60 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <label for="disciplineDrop">Discipline:</label>
-    <select id="disciplineDrop" name="disciplineDrop">
-      <option value="ACC">Acceleration</option>
-      <option value="SKP">Skidpad</option>
-      <option value="END">Endurance</option>
-      <option value="ALL">Overall</option>
-    </select>
+    <form>
+      <label for="disciplineDrop">Discipline:</label>
+      <select id="disciplineDrop" name="disciplineDrop">
+        <option value="ACC">Acceleration</option>
+        <option value="SKP">Skidpad</option>
+        <option value="END">Endurance</option>
+        <option value="OVR">Overall</option>
+      </select>
+      <label for="classDrop"> Class:</label>
+      <select id="classDrop" name="classDrop">
+        <option value="E">Electric</option>
+        <option value="C">Combustion</option>
+        <option value="D">Driverless</option>
+        <option value="-ALL-">All</option>
+      </select>
+      <label for="eventDrop">Event:</label>
+      <select id="eventDrop" name="eventDrop">
+        <option value="-ALL-">All</option>
+        <option value="Germany">FS Germany</option>
+        <option value="Austria">FS Austria</option>
+        <option value="East">FS East</option>
+        <option value="Italy">FS ATA / Italy</option>
+        <option value="Spain">FS Spain</option>
+        <option value="Brazil">FS Brazil</option>
+        <option value="Michigan">Michigan</option>
+        <option value="UK">FS UK</option>
+        <option value="Czech">FS Czech</option>
+      </select>
+    </form>
     <label for="sortCategoryDrop">Sort By:</label>
     <select id="sortCategoryDrop" name="sortCategoryDrop">
-      <option value="year">Year</option>
+      <option value="Date">Date</option>
       <option value="adj time">Adjusted time</option>
       <option value="Time">Time</option>
       <option value="points">Points</option>
     </select>
-    <input type="button" value="Display table" onclick="database()" />
+    <label for="directionDrop">Order:</label>
+    <select id="directionDrop" name="directionDrop">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+    <input type="button" id="displayButton" value="Display table" />
+    <footer>
+      <hr />
+      <a href="/index.html">Home page</a>
+      |
+      <a href="#">Back to top</a>
+      | This website is hosted using
+      <a href="https://pages.github.com/" target="_blank">Github Pages</a>
+      |
+      <a href="/impressum.html">Impressum</a>
+    </footer>
 
     <script src="/public/xlsx.full.min.js"></script>
-    <script src="database.js"></script>
+    <script src="FSDBIO.js" type="module"></script>
   </body>
 </html>
