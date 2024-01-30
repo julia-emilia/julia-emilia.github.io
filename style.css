@@ -25,6 +25,8 @@
 html, body {
   margin:0;
   padding: 0;
+  position: relative;
+  min-height: 100vh;
 }
 header {
   font-family: FugazOne, 'Times New Roman', Times, serif;
@@ -90,6 +92,12 @@ nav a:hover {
 .dropdown:hover .dropdown-content{
   display: block;
 }
+article {
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
 .LinkImages {
     width: 300px;
     height: 300px;
@@ -102,9 +110,26 @@ nav a:hover {
     text-align: right;
   }
   footer{
+    
     font-family: Caladea, 'Times New Roman', Times, serif;
     font-size: 12pt;
+    padding-top: 1rem;
+    
+  text-align: left;
+  background: #d7b235;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  height: 2rem; 
+  box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
+  z-index: 1;
   }
+  main {
+    padding-bottom: 3rem;    /* Footer height */
+  }
+  /* headers */
   h1,h2 {
     font-family: Caladea, 'Times New Roman', Times, serif;
     font-weight: bolder;

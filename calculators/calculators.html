@@ -36,103 +36,110 @@
         circuits.
       </p>
     </div>
-    <h2 id="calc_voltage_divider">Resistors for Voltage divider</h2>
-    <label for="inputVoltage">Input Voltage:</label>
-    <input type="number" name="Vin" id="inputVoltage" /><br />
-    <label for="outputVoltage">Output Voltage:</label>
-    <input type="number" name="Vout" id="outputVoltage" />
-    <br />
-    <label for="seriesDropdown">Choose an E-Series:</label>
-    <select id="seriesDropdown" name="seriesDropdown">
-      <option value="E03">E3</option>
-      <option value="E06">E6</option>
-      <option value="E12">E12</option>
-      <option value="E24">E24</option>
-    </select>
-    <br />
-    <input
-      type="button"
-      id="resistorVoltageDividerButton"
-      value="Calculate Resistor Values"
-    />
-    <div id="pullupRes"></div>
-    <br />
-    <div id="pulldownRes"></div>
-    <br />
-    <div id="RealVoltage"></div>
+    <main>
+      <article>
+        <h2 id="calc_voltage_divider">Resistors for Voltage divider</h2>
+        <label for="inputVoltage">Input Voltage:</label>
+        <input type="number" name="Vin" id="inputVoltage" /><br />
+        <label for="outputVoltage">Output Voltage:</label>
+        <input type="number" name="Vout" id="outputVoltage" />
+        <br />
+        <label for="seriesDropdown">Choose an E-Series:</label>
+        <select id="seriesDropdown" name="seriesDropdown">
+          <option value="E03">E3</option>
+          <option value="E06">E6</option>
+          <option value="E12">E12</option>
+          <option value="E24">E24</option>
+        </select>
+        <br />
+        <input
+          type="button"
+          id="resistorVoltageDividerButton"
+          value="Calculate Resistor Values"
+        />
+        <div id="pullupRes"></div>
+        <br />
+        <div id="pulldownRes"></div>
+        <br />
+        <div id="RealVoltage"></div>
+      </article>
+      <article>
+        <h2>Cutoff frequency of RC-filter</h2>
+        <label for="CutoffRes">Resistor:</label>
+        <input type="number" name="CutoffRes" id="CutoffRes" /><br />
+        <label for="CutoffCap">Capacitor:</label>
+        <input type="number" name="CutoffCap" id="CutoffCap" />
+        <br />
+        <input
+          type="button"
+          id="cutoffFrequencyButton"
+          value="Calculate Cutoff Frequency"
+        />
+        <br />
+        <div id="CutoffFrequency"></div>
+        <br />
 
-    <h2>Cutoff frequency of RC-filter</h2>
-    <label for="CutoffRes">Resistor:</label>
-    <input type="number" name="CutoffRes" id="CutoffRes" /><br />
-    <label for="CutoffCap">Capacitor:</label>
-    <input type="number" name="CutoffCap" id="CutoffCap" />
-    <br />
-    <input
-      type="button"
-      id="cutoffFrequencyButton"
-      value="Calculate Cutoff Frequency"
-    />
-    <br />
-    <div id="CutoffFrequency"></div>
-    <br />
-
-    <h2>Resistor for specific filter</h2>
-    <label for="filterFrequency">Cutoff Frequency:</label>
-    <input type="number" name="filterFrequency" id="filterFrequency" /><br />
-    <label for="filterCap">Capacitor:</label>
-    <input type="number" name="filterCap" id="filterCap" />
-    <br />
-    <label for="filterEseriesDrop">Choose an E-Series:</label>
-    <select id="filterEseriesDrop" name="filterEseriesDrop">
-      <option value="E03">E3</option>
-      <option value="E06">E6</option>
-      <option value="E12">E12</option>
-      <option value="E24">E24</option>
-    </select>
-    <br />
-    <br />
-    <input
-      type="button"
-      id="GetResistorForFilterbutton"
-      value="Calculate filter resistor"
-    />
-    <br />
-    <div id="filterResistor"></div>
-    <br />
-    <div id="filterRealFreq"></div>
-    <br />
-
-    <h2>Voltage divider with a Pullup</h2>
-    <label for="ResV1">Resistor to V1:</label>
-    <input type="number" name="ResV1" id="ResV1" /><br />
-    <label for="ResV2">Resistor to V2:</label>
-    <input type="number" name="ResV2" id="ResV2" /><br />
-    <label for="ResGnd">Resistor to Ground:</label>
-    <input type="number" name="ResGnd" id="ResGnd" /><br />
-    <label for="V1">Voltage 1:</label>
-    <input type="number" name="V1" id="V1" /><br />
-    <label for="V2">Voltage 2:</label>
-    <input type="number" name="V2" id="V2" /><br />
-    <br />
-    <input
-      type="button"
-      id="pullupVoltageDivider"
-      value="Calculate Output voltage"
-    />
-    <br />
-    <div id="OutputvoltageWithPullup"></div>
-    <br />
-    <h2>Square of a Number</h2>
-    <label for="num">Enter Number:</label>
-    <input type="number" name="numberinput" id="num" />
-    <input type="button" id="squareButton" value="Calculate square" />
-    <br />
-    <div id="output"></div>
+        <h2>Resistor for specific filter</h2>
+        <label for="filterFrequency">Cutoff Frequency:</label>
+        <input
+          type="number"
+          name="filterFrequency"
+          id="filterFrequency"
+        /><br />
+        <label for="filterCap">Capacitor:</label>
+        <input type="number" name="filterCap" id="filterCap" />
+        <br />
+        <label for="filterEseriesDrop">Choose an E-Series:</label>
+        <select id="filterEseriesDrop" name="filterEseriesDrop">
+          <option value="E03">E3</option>
+          <option value="E06">E6</option>
+          <option value="E12">E12</option>
+          <option value="E24">E24</option>
+        </select>
+        <br />
+        <br />
+        <input
+          type="button"
+          id="GetResistorForFilterbutton"
+          value="Calculate filter resistor"
+        />
+        <br />
+        <div id="filterResistor"></div>
+        <br />
+        <div id="filterRealFreq"></div>
+        <br />
+      </article>
+      <article>
+        <h2>Voltage divider with a Pullup</h2>
+        <label for="ResV1">Resistor to V1:</label>
+        <input type="number" name="ResV1" id="ResV1" /><br />
+        <label for="ResV2">Resistor to V2:</label>
+        <input type="number" name="ResV2" id="ResV2" /><br />
+        <label for="ResGnd">Resistor to Ground:</label>
+        <input type="number" name="ResGnd" id="ResGnd" /><br />
+        <label for="V1">Voltage 1:</label>
+        <input type="number" name="V1" id="V1" /><br />
+        <label for="V2">Voltage 2:</label>
+        <input type="number" name="V2" id="V2" /><br />
+        <br />
+        <input
+          type="button"
+          id="pullupVoltageDivider"
+          value="Calculate Output voltage"
+        />
+        <br />
+        <div id="OutputvoltageWithPullup"></div>
+        <br />
+        <h2>Square of a Number</h2>
+        <label for="num">Enter Number:</label>
+        <input type="number" name="numberinput" id="num" />
+        <input type="button" id="squareButton" value="Calculate square" />
+        <br />
+        <div id="output"></div>
+      </article>
+    </main>
     <footer>
-      <hr />
-      <a href="/index.html">Home page</a>
-      |
-      <a href="#">Back to top</a>
+      &nbsp;<a href="#">Back to top</a>
       | This website is hosted using
       <a href="https://pages.github.com/" target="_blank">Github Pages</a>
       |

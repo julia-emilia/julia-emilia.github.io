@@ -36,30 +36,35 @@
         machines.
       </p>
     </div>
-    <h2>Converter from mechanical speed to electrical frequency</h2>
-    <label for="n_rpm">Speed in rotations per minute:</label>
-    <input type="number" name="n_rpm" id="n_rpm" />
-    <br />
-    <label for="pp">Polepairs:</label>
-    <input type="number" name="pp" id="pp" />
-    <br />
-    <input
-      type="button"
-      value="Calculate Electrical frequency"
-      onclick="GetElectricalFrequency()"
-    />
-    <br />
-    <div id="f_mech"></div>
-    <br />
-    <div id="w_mech"></div>
-    <br />
-    <div id="f_el"></div>
-    <br />
-    <div id="w_el"></div>
-    <br />
-    <hr />
-    <a href="#">Back to top</a>
-    <a href="/impressum.html">Impressum</a>
+    <main>
+      <article>
+        <h2>Converter from mechanical speed to electrical frequency</h2>
+        <label for="n_rpm">Speed in rotations per minute:</label>
+        <input type="number" name="n_rpm" id="n_rpm" />
+        <br />
+        <label for="pp">Polepairs:</label>
+        <input type="number" name="pp" id="pp" />
+        <br />
+        <input
+          type="button"
+          value="Calculate Electrical frequency"
+          onclick="GetElectricalFrequency()"
+        />
+        <br />
+        <div id="f_mech"></div>
+        <br />
+        <div id="w_mech"></div>
+        <br />
+        <div id="f_el"></div>
+        <br />
+        <div id="w_el"></div>
+        <br />
+      </article>
+    </main>
+    <footer>
+      &nbsp;<a href="#">Back to top</a>
+      <a href="/impressum.html">Impressum</a>
+    </footer>
     <script src="EMequations.js"></script>
   </body>
 </html>
