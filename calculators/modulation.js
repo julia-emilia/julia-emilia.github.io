@@ -14,7 +14,7 @@ export function phasesFromArrow(amplitude,angle){
 export function superSinus(U,V,W){
     let maxVoltage = Math.max(U,V,W);
     let minVoltage = Math.min(U,V,W);
-    let U0 = -(maxVoltage+minVoltage)/3;
+    let U0 = -(maxVoltage+minVoltage)/2;
     return U0;
 }
 export function sinusGraph(amplitude,displayLength){
