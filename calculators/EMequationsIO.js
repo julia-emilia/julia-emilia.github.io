@@ -1,4 +1,4 @@
-import { squareRoot,phasesFromArrow, superSinus, superSinusGraph,phaseToPhaseGraph, motorPhases,sinusGraph, drawLimits } from "./modulation.js";
+import { squareRoot,phasesFromArrow, superSinus, superSinusGraph,phaseToPhaseGraph, motorPhases,sinusGraph, drawLimits, blockCommutation } from "./modulation.js";
 import { drawHexagon,drawArrow, drawCircle, drawThreePointStar,drawCircleFill,drawGraph} from "./canvasUtils.js";
 
 function GetElectricalFrequency() {
@@ -48,32 +48,45 @@ function canvasAnimation(){
       //console.log('Feature is disabled.');
       
     }
-    //derive limits from Udc
-    let superSinusLimit = voltInvDc/Math.sqrt(3);
-    let hexagonLimit = 2/3*voltInvDc;
-    let voltCtrlSVAmpl = modFacInput*superSinusLimit;
-    let uphphAmpl = voltCtrlSVAmpl*Math.sqrt(3);
-  
-  
-  
-  
+    let blockCommOperation = false;
+    if(modFacInput>1.0){
+    blockCommOperation = true;
+    }
   if(canvas.getContext){
   const ctx = canvas.getContext('2d');
   
   ctx.globalCompositeOperation = "destination-over";
   ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
   // change angle
-  const speed = 20;
+  const speed = 6;
   let angle = ((2 * Math.PI) / speed) * time.getSeconds() + ((2 * Math.PI) / (speed*1000)) * time.getMilliseconds();
   let normAngle =angle%(2*Math.PI);
   // calculate electrical values
-  let [voltCtrlUInstant,voltCtrlVInstant,voltCtrlWInstant] = phasesFromArrow(voltCtrlSVAmpl,angle);
+  //derive limits from Udc
+  let superSinusLimit = voltInvDc/Math.sqrt(3);
+  let hexagonLimit = 2/3*voltInvDc;
+  let voltCtrlSVAmpl = modFacInput*superSinusLimit;
+  let voltCtrlModAmpl = voltCtrlSVAmpl;
+  let angleInv = 0;
+  if(blockCommOperation == true){
+    angleInv = blockCommutation(normAngle);
+    voltCtrlModAmpl = hexagonLimit;
+
+  }else{
+    angleInv = angle;
+    voltCtrlModAmpl = voltCtrlSVAmpl;
+   
+  }
+  let uphphAmpl = voltCtrlModAmpl*Math.sqrt(3);
+  
+  let [voltCtrlUInstant,voltCtrlVInstant,voltCtrlWInstant] = phasesFromArrow(voltCtrlModAmpl,angleInv);
   let voltInvZeroInstant = 0;
-  if(superSinusOperation == true){
+  if(superSinusOperation == true || blockCommOperation){
     voltInvZeroInstant = superSinus(voltCtrlUInstant,voltCtrlVInstant,voltCtrlWInstant);
    }else{
      voltInvZeroInstant = 0;
    }
+   
    let voltInvUInstant = voltCtrlUInstant+voltInvZeroInstant;
    let voltInvVInstant = voltCtrlVInstant+voltInvZeroInstant;
    let voltInvWInstant = voltCtrlWInstant+voltInvZeroInstant;
@@ -86,6 +99,7 @@ function canvasAnimation(){
   let superSinusLimitDisplay = displayFactor*superSinusLimit;
   let hexagonLimitDisplay = displayFactor*hexagonLimit;
   let voltCtrlSVAmplDisplay = displayFactor*voltCtrlSVAmpl;
+  let voltCtrlModAmplDisplay = displayFactor*voltCtrlModAmpl;
   let voltInvZeroInstantDisplay = displayFactor*voltInvZeroInstant;
   let voltCtrlUInstantDisplay = displayFactor*voltCtrlUInstant;
   let voltCtrlVInstantDisplay = displayFactor*voltCtrlVInstant;
@@ -94,8 +108,6 @@ function canvasAnimation(){
   let voltInvUInstantDisplay = displayFactor*voltInvUInstant;
   let voltInvVInstantDisplay = displayFactor*voltInvVInstant;
   let voltInvWInstantDisplay = displayFactor*voltInvWInstant;
-  
-  //[voltInvUInstantDisplay,voltInvVInstantDisplay,voltInvWInstantDisplay] = phasesFromArrow(voltCtrlSVAmplDisplay,angle);
   
   
   // canvas center X and Y
@@ -109,8 +121,10 @@ function canvasAnimation(){
   
     
     //draw hexagon
+    //ctx.fillText('U',centerX-5,centerY-150)
     ctx.save();
     ctx.translate(centerX,centerY);
+    ctx.rotate(Math.PI/6)
     drawHexagon(ctx,hexagonLimitDisplay);
     ctx.restore();
     //draw circle
@@ -122,6 +136,26 @@ function canvasAnimation(){
     ctx.setLineDash([]);//solid line
     drawCircle(ctx,superSinusLimitDisplay,'dashed');
     ctx.restore();
+    ctx.save();
+    ctx.translate(centerX,centerY);
+    ctx.beginPath()
+    ctx.strokeStyle = 'red';
+    ctx.moveTo(0,0);
+    ctx.lineTo(0,-100);
+    ctx.stroke();
+    ctx.rotate(-120*Math.PI/180)
+    ctx.beginPath()
+    ctx.strokeStyle = 'blue';
+    ctx.moveTo(0,0);
+    ctx.lineTo(0,-100);
+    ctx.stroke();
+    ctx.rotate(-120*Math.PI/180)
+    ctx.beginPath()
+    ctx.strokeStyle = 'green';
+    ctx.moveTo(0,0);
+    ctx.lineTo(0,-100);
+    ctx.stroke();
+    ctx.restore();
     
     // Draw arrow
     ctx.save();
@@ -129,22 +163,31 @@ function canvasAnimation(){
     ctx.rotate(-angle);
     drawArrow(ctx,voltCtrlSVAmplDisplay);
     ctx.restore();
+    // Draw arrow
+    ctx.save();
+    ctx.translate(centerX,centerY);
+    ctx.strokeStyle = 'red';
+    ctx.rotate(-angleInv);
+    drawArrow(ctx,voltCtrlModAmplDisplay);
+    ctx.restore();
 
     //// mercedes
     centerX = 400;
     // draw limits
     ctx.save();
     ctx.translate(centerX,centerY);
+    
     drawLimits(ctx,voltInvDcDisplay,superSinusLimitDisplay);
     ctx.restore();
     
 
     //draw star
+    let starCenterX = centerX;
     let starCenterY = centerY+voltInvZeroInstantDisplay;
     ctx.save();
-    ctx.translate(centerX,starCenterY);
-    ctx.rotate(-angle);
-    drawThreePointStar(ctx,voltCtrlSVAmplDisplay);
+    ctx.translate(starCenterX,starCenterY);
+    ctx.rotate(-angleInv);
+    drawThreePointStar(ctx,voltCtrlModAmplDisplay);
     ctx.restore();
     //// draw phases referenced to 0-point
     centerX = 650;
@@ -154,7 +197,6 @@ function canvasAnimation(){
     drawLimits(ctx,voltInvDcDisplay,superSinusLimitDisplay);
     ctx.restore();
     // draw moving dots
-    
     let angleXaxisDisplay = 200/(2*Math.PI)*normAngle;
     ctx.save();
     ctx.translate(centerX-100+angleXaxisDisplay,centerY+voltInvZeroInstantDisplay);
@@ -184,12 +226,10 @@ function canvasAnimation(){
     ctx.translate(centerX-100,centerY);
     
     //calculate the whole graph then display the three lines
-    let angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay,U0Array = [];
-    if(superSinusOperation == true){
-    [angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay,U0Array] =superSinusGraph(voltCtrlSVAmplDisplay,200);
-    }else{
-      [angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay] =sinusGraph(voltCtrlSVAmplDisplay,200);
-    }
+   // let angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay,U0Array = [];
+   
+    let [angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay,U0Array] =sinusGraph(voltCtrlModAmplDisplay,200,superSinusOperation,blockCommOperation);
+    
     ctx.strokeStyle = 'red';
     drawGraph(ctx,angleDisplayArray,voltInvUArrayDisplay);
     ctx.strokeStyle = 'green';
@@ -245,9 +285,9 @@ function canvasAnimation(){
     ctx.restore();
     //// draw motor phases
     centerX = 1200;
-    let voltCtrlSVAmplRms = voltCtrlSVAmpl/Math.sqrt(2);
-    ctx.fillText('U mot pp:    '+(2*voltCtrlSVAmpl).toFixed(2)+ ' V', centerX-100, 25);
-    ctx.fillText('U mot ampl: '+voltCtrlSVAmpl.toFixed(2)+ ' V', centerX-100, 50);
+    let voltCtrlSVAmplRms = voltCtrlModAmpl/Math.sqrt(2);
+    ctx.fillText('U mot pp:    '+(2*voltCtrlModAmpl).toFixed(2)+ ' V', centerX-100, 25);
+    ctx.fillText('U mot ampl: '+voltCtrlModAmpl.toFixed(2)+ ' V', centerX-100, 50);
     ctx.fillText('U mot rms:   '+voltCtrlSVAmplRms.toFixed(2)+ ' V', centerX-100, 75);
     // draw limits
     ctx.save();
