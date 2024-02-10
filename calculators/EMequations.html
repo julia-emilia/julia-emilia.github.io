@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculators</title>
     <link rel="stylesheet" href="/style.css" />
+    <style>
+      #hexagonContainer {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        position: relative;
+        background: yellow;
+      }
+
+      #hexagonArrow {
+        width: 50px;
+        height: 50px;
+        background: red;
+        top: 200px;
+        left: 400px;
+        position: absolute;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -47,8 +65,8 @@
         <br />
         <input
           type="button"
+          id="calcElecFreqBtn"
           value="Calculate Electrical frequency"
-          onclick="GetElectricalFrequency()"
         />
         <br />
         <div id="f_mech"></div>
@@ -60,11 +78,31 @@
         <div id="w_el"></div>
         <br />
       </article>
+      <article>
+        <label for="VoltDc">DC-link voltage:</label>
+        <input type="number" name="VoltDc" id="VoltDc" value="400" /><br />
+        <label for="modFac">Modulation factor:</label>
+
+        <input
+          type="range"
+          name="modFac"
+          id="modFac"
+          min="0"
+          value="1.0"
+          max="1.15"
+          step="0.01"
+        />
+        <div id="modFacOutput"></div>
+        <br />
+        <label for="useSuperSinus">Use Supersinus:</label>
+        <input type="checkbox" name="useSuperSinus" id="useSuperSinus" /><br />
+        <canvas id="hexagonCanvas" height="500" width="1400"> </canvas>
+      </article>
     </main>
     <footer>
       &nbsp;<a href="#">Back to top</a>
       <a href="/impressum.html">Impressum</a>
     </footer>
-    <script src="EMequations.js"></script>
+    <script src="EMequationsIO.js" type="module"></script>
   </body>
 </html>
