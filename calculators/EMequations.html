@@ -24,6 +24,26 @@
         position: absolute;
       }
     </style>
+    <link rel="stylesheet" href="columns.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
   </head>
   <body>
     <header>
@@ -56,6 +76,93 @@
     </div>
     <main>
       <article>
+        <h2>Motor and Inverter Voltages</h2>
+
+        <label for="VoltDc">DC-link voltage:</label>
+        <input type="number" name="VoltDc" id="VoltDc" value="400" /><br />
+        <label for="modFac">Modulation factor:</label>
+
+        <input
+          type="range"
+          name="modFac"
+          id="modFac"
+          min="0"
+          value="1.0"
+          max="1.15"
+          step="0.01"
+        />
+        <span id="modFacOutput"></span>
+        <br />
+        <label for="useSuperSinus">Use Harmonic injection (Supersinus):</label>
+        <input type="checkbox" name="useSuperSinus" id="useSuperSinus" /><br />
+
+        <div class="all-columns">
+          <div class="small-column"></div>
+          <div class="wide-column">
+            $U_{DC}=$
+            <span id="VoltDcOut"></span>
+            <br />$U_{lim,SS}=$
+            <span id="VoltSupersinus"></span>
+            <br />$U_{lim,block}=$
+            <span id="VoltHexagon"></span>
+          </div>
+          <div class="wide-column"></div>
+          <div class="wide-column"></div>
+          <div class="wide-column">
+            $U_{\Delta,pp}=$
+            <span id="VoltDeltaPp"></span>
+            <br />
+            $\hat{U}_{\Delta}= $
+            <span id="VoltDeltaAmpl"></span>
+            <br />
+            $U_{\Delta,rms}=$
+            <span id="VoltDeltaRms"></span>
+          </div>
+          <div class="wide-column">
+            $U_{ph,pp}= $
+            <span id="VoltMotPp"></span>
+            <br />
+            $\hat{U}_{ph}= $
+            <span id="VoltMotAmpl"></span>
+            <br />
+            $U_{ph,rms}= $
+            <span id="VoltMotRms"></span>
+          </div>
+        </div>
+        <canvas id="hexagonCanvas" height="300" width="1400"> </canvas>
+        <div class="all-columns">
+          <div class="wide-column">
+            DC link voltage:<br />
+            Limit for Sine output: <br />
+            Limit for Block: <br />
+          </div>
+          <div class="wide-column">
+            $U_{DC}$ <br />$U_{lim,SS}=\sqrt{3}*U_{DC}$
+            <br />$U_{lim,block}=\frac{2}{3}*U_{DC}$
+          </div>
+          <div class="wide-column">
+            Voltage Phase to phase, peak to peak<br />
+            Voltage Phase to phase, amplitude<br />
+            Voltage Phase to phase, RMS<br />
+          </div>
+          <div class="wide-column">
+            $U_{\Delta,pp}=2U_{DC}$ <br />
+            $\hat{U}_{\Delta}=U_{DC}$ <br />
+            $U_{\Delta,rms}=\frac{1}{\sqrt{2}}U_{DC}$
+          </div>
+          <div class="wide-column">
+            Voltage Phase, peak to peak<br />
+            Voltage Phase, amplitude<br />
+            Voltage Phase, RMS<br />
+          </div>
+          <div class="general-column">
+            $U_{ph,pp}=\frac{2}{\sqrt{3}}U_{DC}$ <br />
+            $\hat{U}_{ph}=\frac{1}{\sqrt{3}}U_{DC}$ <br />
+            $U_{ph,rms}=\frac{1}{\sqrt{2}\sqrt{3}}U_{DC}$
+          </div>
+        </div>
+      </article>
+      <article>
         <h2>Converter from mechanical speed to electrical frequency</h2>
         <label for="n_rpm">Speed in rotations per minute:</label>
         <input type="number" name="n_rpm" id="n_rpm" />
@@ -77,26 +184,6 @@
         <br />
         <div id="w_el"></div>
         <br />
-      </article>
-      <article>
-        <label for="VoltDc">DC-link voltage:</label>
-        <input type="number" name="VoltDc" id="VoltDc" value="400" /><br />
-        <label for="modFac">Modulation factor:</label>
-
-        <input
-          type="range"
-          name="modFac"
-          id="modFac"
-          min="0"
-          value="1.0"
-          max="1.15"
-          step="0.01"
-        />
-        <div id="modFacOutput"></div>
-        <br />
-        <label for="useSuperSinus">Use Supersinus:</label>
-        <input type="checkbox" name="useSuperSinus" id="useSuperSinus" /><br />
-        <canvas id="hexagonCanvas" height="500" width="1400"> </canvas>
       </article>
     </main>
     <footer>

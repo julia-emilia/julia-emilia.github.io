@@ -1,0 +1,15 @@
+.all-columns{
+    display: flex;
+}
+.general-column{
+    height: 100px;
+    width: 125px;
+}
+.wide-column{
+    height: 100px;
+    width: 250px;
+}
+.small-column{
+    height: 100px;
+    width: 72px;
+}

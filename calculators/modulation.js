@@ -1,6 +1,4 @@
-export function squareRoot(){
-    
-}
+
 
 export function phasesFromArrow(amplitude,angle){
     angle = angle+Math.PI/2;
@@ -17,7 +15,7 @@ export function superSinus(U,V,W){
     let U0 = -(maxVoltage+minVoltage)/2;
     return U0;
 }
-export function sinusGraph(amplitude,displayLength,useSuperSinus,useBlockComm){
+export function sinusGraph(amplitudeIn,displayLength,useSuperSinus,useBlockComm,cutOffOperation,voltInvDc){
     let angleArray = [];
     let angleDisplayArray = [];
     const numberOfPoints = 50;
@@ -37,14 +35,20 @@ export function sinusGraph(amplitude,displayLength,useSuperSinus,useBlockComm){
     let W = 0;
     let U0 = 0;
     
-
+let amplitude = amplitudeIn;
     for(let k=0; k<angleArray.length;k++){
         if(useBlockComm == true){
             [U,V,W] = phasesFromArrow(amplitude,blockCommutation(angleArray[k]));
             useSuperSinus = true;
             U0 = superSinus(U,V,W);
         }else{
+            if(cutOffOperation==true){
+                
+                amplitude = limitToHex(angleArray[k],voltInvDc,amplitudeIn);
+                useSuperSinus = true;
+              }
             [U,V,W] = phasesFromArrow(amplitude,angleArray[k]);
+            
             if(useSuperSinus == true){
                 U0 = superSinus(U,V,W);
             }else{
@@ -60,38 +64,7 @@ export function sinusGraph(amplitude,displayLength,useSuperSinus,useBlockComm){
     return [angleDisplayArray,UArray,VArray,WArray,U0Array];
 }
 
-export function superSinusGraph(amplitude,displayLength){
-    let angleArray = [];
-    let angleDisplayArray = [];
-    const numberOfPoints = 50;
-    for(let i=0; i<=numberOfPoints;i++){
-        angleArray[i] = i*2*Math.PI/numberOfPoints;
-        angleDisplayArray[i] = displayLength/numberOfPoints*i
-    }
-    //
-    let UArray = [];
-    let VArray = [];
-    let WArray = [];
-    let U0Array = [];
 
-    let U = 0;
-    let V = 0;
-    let W = 0;
-    let U0 = 0;
-
-    for(let k=0; k<angleArray.length;k++){
-    [U,V,W] = phasesFromArrow(amplitude,angleArray[k])
-    U0 = superSinus(U,V,W);
-    UArray[k] = U+U0;
-    VArray[k] = V+U0;
-    WArray[k] = W+U0;
-    U0Array[k] = U0;
-    }
-    return [angleDisplayArray,UArray,VArray,WArray,U0Array];
-    
-    
-
-}
 
 export function phaseToPhaseGraph(UArray,VArray,WArray){
     let UVArray = [];
@@ -172,4 +145,26 @@ export function blockCommutation(angleSV){
     }
     
     return blockAngle;
+}
+
+export function limitToHex(angle,udc,SVAmpl){
+    
+    let normAngle =angle%(Math.PI/3);
+    console.log(normAngle)
+    let sinAngle = Math.sin(normAngle);
+    let cosAlpha = Math.cos(normAngle);
+    let cosBeta = Math.cos(Math.PI/3-normAngle);
+    
+    let minAmpl = udc/Math.sqrt(3);
+    let hexagonAmpl = minAmpl/cosAlpha;
+    if(normAngle<Math.PI/6){
+        hexagonAmpl = minAmpl/cosAlpha;
+    }else{
+        hexagonAmpl = minAmpl/cosBeta;
+    }
+    let outputAmpl = hexagonAmpl;
+    if(SVAmpl<hexagonAmpl){
+        outputAmpl = SVAmpl;
+    }
+    return outputAmpl;
 }

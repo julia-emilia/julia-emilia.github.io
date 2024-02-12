@@ -1,4 +1,4 @@
-import { squareRoot,phasesFromArrow, superSinus, superSinusGraph,phaseToPhaseGraph, motorPhases,sinusGraph, drawLimits, blockCommutation } from "./modulation.js";
+import { phasesFromArrow, superSinus, phaseToPhaseGraph, motorPhases,sinusGraph, drawLimits, blockCommutation,limitToHex } from "./modulation.js";
 import { drawHexagon,drawArrow, drawCircle, drawThreePointStar,drawCircleFill,drawGraph} from "./canvasUtils.js";
 
 function GetElectricalFrequency() {
@@ -19,8 +19,7 @@ function GetElectricalFrequency() {
 }
 
 function hexagonAnimationIO(){
-  //Get inputs
-  //Get outputs
+
   
   canvasAnimation();
 }
@@ -49,8 +48,11 @@ function canvasAnimation(){
       
     }
     let blockCommOperation = false;
-    if(modFacInput>1.0){
-    blockCommOperation = true;
+    let cutOffOperation = false;
+    if(modFacInput>1){
+    
+    cutOffOperation = true;
+    superSinusOperation = true;
     }
   if(canvas.getContext){
   const ctx = canvas.getContext('2d');
@@ -58,7 +60,7 @@ function canvasAnimation(){
   ctx.globalCompositeOperation = "destination-over";
   ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
   // change angle
-  const speed = 6;
+  const speed = 20;
   let angle = ((2 * Math.PI) / speed) * time.getSeconds() + ((2 * Math.PI) / (speed*1000)) * time.getMilliseconds();
   let normAngle =angle%(2*Math.PI);
   // calculate electrical values
@@ -73,8 +75,14 @@ function canvasAnimation(){
     voltCtrlModAmpl = hexagonLimit;
 
   }else{
+    if(cutOffOperation==true){
+      angleInv = angle;
+      voltCtrlModAmpl = limitToHex(angle,voltInvDc,voltCtrlSVAmpl);
+
+    }else{
     angleInv = angle;
     voltCtrlModAmpl = voltCtrlSVAmpl;
+    }
    
   }
   let uphphAmpl = voltCtrlModAmpl*Math.sqrt(3);
@@ -90,6 +98,27 @@ function canvasAnimation(){
    let voltInvUInstant = voltCtrlUInstant+voltInvZeroInstant;
    let voltInvVInstant = voltCtrlVInstant+voltInvZeroInstant;
    let voltInvWInstant = voltCtrlWInstant+voltInvZeroInstant;
+   // output numbers
+   let outputVoltDc= document.getElementById("VoltDcOut");
+  outputVoltDc.innerHTML = (voltInvDc).toFixed(2)+" V";
+  let outputVoltSupersinus= document.getElementById("VoltSupersinus");
+  outputVoltSupersinus.innerHTML = (1/Math.sqrt(3)*voltInvDc).toFixed(2)+" V";
+  let outputVoltHexagon= document.getElementById("VoltHexagon");
+  outputVoltHexagon.innerHTML = (2/3*voltInvDc).toFixed(2)+" V";
+   //Delta
+   let outputVoltDeltaPp = document.getElementById("VoltDeltaPp");
+   outputVoltDeltaPp.innerHTML = (2*uphphAmpl).toFixed(2)+" V";
+   let outputVoltDeltaAmpl = document.getElementById("VoltDeltaAmpl");
+   outputVoltDeltaAmpl.innerHTML = (uphphAmpl).toFixed(2)+" V";
+   let outputVoltDeltaRms = document.getElementById("VoltDeltaRms");
+   outputVoltDeltaRms.innerHTML = (uphphAmpl/Math.sqrt(2)).toFixed(2)+" V";
+   //Motor/star
+   let outputVoltMotPp = document.getElementById("VoltMotPp");
+   outputVoltMotPp.innerHTML = (2*voltCtrlModAmpl).toFixed(2)+" V";
+   let outputVoltMotAmpl = document.getElementById("VoltMotAmpl");
+   outputVoltMotAmpl.innerHTML = (voltCtrlModAmpl).toFixed(2)+" V";
+   let outputVoltMotRms = document.getElementById("VoltMotRms");
+   outputVoltMotRms.innerHTML = (voltCtrlModAmpl/Math.sqrt(2)).toFixed(2)+" V";
   //scale for display 
   let displayFactor = 50;
   while(displayFactor*voltInvDc >150){
@@ -111,25 +140,29 @@ function canvasAnimation(){
   
   
   // canvas center X and Y
-  let centerX = 150;
+  const centerX1 = 125;
+  const centerX2 = 375;
+  const centerX3 = 625;
+  const centerX4 = 875;
+  const centerX5 = 1125;
   const centerY = canvas.height / 2;
     //draw descriptions
     ctx.font = "18px Caladea";
-  ctx.fillText('DC link voltage: '+voltInvDc.toString(10)+ ' V', centerX/2, 50);
-  ctx.fillText('Limit for Supersinus: '+superSinusLimit.toFixed(2)+ ' V', centerX/2, 80);
-  ctx.fillText('Limit for Block: '+hexagonLimit.toFixed(2)+ ' V', centerX/2, 110);
+  //ctx.fillText('DC link voltage: '+voltInvDc.toString(10)+ ' V', centerX/2, 50);
+  //ctx.fillText('Limit for Supersinus: '+superSinusLimit.toFixed(2)+ ' V', centerX/2, 80);
+  //ctx.fillText('Limit for Block: '+hexagonLimit.toFixed(2)+ ' V', centerX/2, 110);
   
     
     //draw hexagon
     //ctx.fillText('U',centerX-5,centerY-150)
     ctx.save();
-    ctx.translate(centerX,centerY);
+    ctx.translate(centerX1,centerY);
     ctx.rotate(Math.PI/6)
     drawHexagon(ctx,hexagonLimitDisplay);
     ctx.restore();
     //draw circle
     ctx.save();
-    ctx.translate(centerX,centerY);
+    ctx.translate(centerX1,centerY);
     ctx.strokeStyle = 'grey';
     ctx.setLineDash([10,10]);//dashed
     drawCircle(ctx,voltInvDcDisplay/2,'dot-dashed');
@@ -137,7 +170,7 @@ function canvasAnimation(){
     drawCircle(ctx,superSinusLimitDisplay,'dashed');
     ctx.restore();
     ctx.save();
-    ctx.translate(centerX,centerY);
+    ctx.translate(centerX1,centerY);
     ctx.beginPath()
     ctx.strokeStyle = 'red';
     ctx.moveTo(0,0);
@@ -159,30 +192,30 @@ function canvasAnimation(){
     
     // Draw arrow
     ctx.save();
-    ctx.translate(centerX,centerY);
+    ctx.translate(centerX1,centerY);
     ctx.rotate(-angle);
     drawArrow(ctx,voltCtrlSVAmplDisplay);
     ctx.restore();
     // Draw arrow
     ctx.save();
-    ctx.translate(centerX,centerY);
+    ctx.translate(centerX1,centerY);
     ctx.strokeStyle = 'red';
     ctx.rotate(-angleInv);
     drawArrow(ctx,voltCtrlModAmplDisplay);
     ctx.restore();
 
     //// mercedes
-    centerX = 400;
+    
     // draw limits
     ctx.save();
-    ctx.translate(centerX,centerY);
+    ctx.translate(centerX2,centerY);
     
     drawLimits(ctx,voltInvDcDisplay,superSinusLimitDisplay);
     ctx.restore();
     
 
     //draw star
-    let starCenterX = centerX;
+    let starCenterX = centerX2;
     let starCenterY = centerY+voltInvZeroInstantDisplay;
     ctx.save();
     ctx.translate(starCenterX,starCenterY);
@@ -190,45 +223,45 @@ function canvasAnimation(){
     drawThreePointStar(ctx,voltCtrlModAmplDisplay);
     ctx.restore();
     //// draw phases referenced to 0-point
-    centerX = 650;
+
     // draw limits
     ctx.save();
-    ctx.translate(centerX,centerY);
+    ctx.translate(centerX3,centerY);
     drawLimits(ctx,voltInvDcDisplay,superSinusLimitDisplay);
     ctx.restore();
     // draw moving dots
     let angleXaxisDisplay = 200/(2*Math.PI)*normAngle;
     ctx.save();
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY+voltInvZeroInstantDisplay);
+    ctx.translate(centerX3-100+angleXaxisDisplay,centerY+voltInvZeroInstantDisplay);
     ctx.fillStyle = 'grey';
     drawCircleFill(ctx,5);
     ctx.restore();
     //phase U
     ctx.save();
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY+voltInvUInstantDisplay);
+    ctx.translate(centerX3-100+angleXaxisDisplay,centerY+voltInvUInstantDisplay);
     ctx.fillStyle = 'red';
     drawCircleFill(ctx,5);
     ctx.restore();
     //phase V
     ctx.save();
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY+voltInvVInstantDisplay);
+    ctx.translate(centerX3-100+angleXaxisDisplay,centerY+voltInvVInstantDisplay);
     ctx.fillStyle = 'green';
     drawCircleFill(ctx,5);
     ctx.restore();
     //phase W
     ctx.save();
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY+voltInvWInstantDisplay);
+    ctx.translate(centerX3-100+angleXaxisDisplay,centerY+voltInvWInstantDisplay);
     ctx.fillStyle = 'blue';
     drawCircleFill(ctx,5);
     ctx.restore();
     //Graphes
     ctx.save();
-    ctx.translate(centerX-100,centerY);
+    ctx.translate(centerX3-100,centerY);
     
     //calculate the whole graph then display the three lines
    // let angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay,U0Array = [];
    
-    let [angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay,U0Array] =sinusGraph(voltCtrlModAmplDisplay,200,superSinusOperation,blockCommOperation);
+    let [angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay,U0Array] =sinusGraph(voltCtrlSVAmplDisplay,200,superSinusOperation,blockCommOperation,cutOffOperation,voltInvDcDisplay);
     
     ctx.strokeStyle = 'red';
     drawGraph(ctx,angleDisplayArray,voltInvUArrayDisplay);
@@ -240,40 +273,40 @@ function canvasAnimation(){
     drawGraph(ctx,angleDisplayArray,U0Array);
     ctx.restore();
     //// draw phase-phase voltage
-    centerX = 900;
-    let uphphRms = uphphAmpl/Math.sqrt(2);
-    ctx.fillText('U ph-ph pp:    '+(2*uphphAmpl).toFixed(2)+ ' V', centerX-100, 25);
-    ctx.fillText('U ph-ph ampl: '+uphphAmpl.toFixed(2)+ ' V', centerX-100, 50);
-    ctx.fillText('U ph-ph rms:  '+uphphRms.toFixed(2)+ ' V', centerX-100, 75);
+    
+    //ctx.fillText('U ph-ph pp:    '+(2*uphphAmpl).toFixed(2)+ ' V', centerX-100, 25);
+    //ctx.fillText('U ph-ph ampl: '+uphphAmpl.toFixed(2)+ ' V', centerX-100, 50);
+    //ctx.fillText('U ph-ph rms:  '+uphphRms.toFixed(2)+ ' V', centerX-100, 75);
+    
   
     // draw limits
     ctx.save();
-    ctx.translate(centerX,centerY);
+    ctx.translate(centerX4,centerY);
     drawLimits(ctx,voltInvDcDisplay,superSinusLimitDisplay);
     ctx.restore();
     //phase-phase UV
     ctx.save();
     let voltageUV = voltCtrlUInstantDisplay-voltCtrlVInstantDisplay;
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY+voltCtrlUInstantDisplay-voltCtrlVInstantDisplay);
+    ctx.translate(centerX4-100+angleXaxisDisplay,centerY+voltCtrlUInstantDisplay-voltCtrlVInstantDisplay);
     ctx.fillStyle = 'yellow';
     drawCircleFill(ctx,5);
     ctx.restore();
     //phase-phase VW
     ctx.save();
     let voltageVW = voltCtrlVInstantDisplay-voltCtrlWInstantDisplay;
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY+voltCtrlVInstantDisplay-voltCtrlWInstantDisplay);
+    ctx.translate(centerX4-100+angleXaxisDisplay,centerY+voltCtrlVInstantDisplay-voltCtrlWInstantDisplay);
     ctx.fillStyle = 'cyan';
     drawCircleFill(ctx,5);
     ctx.restore();
     //phase-phase WU
     ctx.save();
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY+voltCtrlWInstantDisplay-voltCtrlUInstantDisplay);
+    ctx.translate(centerX4-100+angleXaxisDisplay,centerY+voltCtrlWInstantDisplay-voltCtrlUInstantDisplay);
     ctx.fillStyle = 'magenta';
     drawCircleFill(ctx,5);
     ctx.restore();
     //Graphs
     ctx.save();
-    ctx.translate(centerX-100,centerY);
+    ctx.translate(centerX4-100,centerY);
     let [voltMotUVArrayDisplay,voltMotVWArrayDisplay,voltMotWUArrayDisplay] = phaseToPhaseGraph(voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay);
     //let UVarray = UArray-VArray;
     ctx.strokeStyle = 'yellow';
@@ -284,37 +317,37 @@ function canvasAnimation(){
     drawGraph(ctx,angleDisplayArray,voltMotWUArrayDisplay);
     ctx.restore();
     //// draw motor phases
-    centerX = 1200;
-    let voltCtrlSVAmplRms = voltCtrlModAmpl/Math.sqrt(2);
-    ctx.fillText('U mot pp:    '+(2*voltCtrlModAmpl).toFixed(2)+ ' V', centerX-100, 25);
-    ctx.fillText('U mot ampl: '+voltCtrlModAmpl.toFixed(2)+ ' V', centerX-100, 50);
-    ctx.fillText('U mot rms:   '+voltCtrlSVAmplRms.toFixed(2)+ ' V', centerX-100, 75);
+    
+    
+    //ctx.fillText('U mot pp:    '+(2*voltCtrlModAmpl).toFixed(2)+ ' V', centerX-100, 25);
+    //ctx.fillText('U mot ampl: '+voltCtrlModAmpl.toFixed(2)+ ' V', centerX-100, 50);
+    //ctx.fillText('U mot rms:   '+voltCtrlSVAmplRms.toFixed(2)+ ' V', centerX-100, 75);
     // draw limits
     ctx.save();
-    ctx.translate(centerX,centerY);
+    ctx.translate(centerX5,centerY);
     drawLimits(ctx,voltInvDcDisplay,superSinusLimitDisplay);
     ctx.restore();
     //motor phase U
     ctx.save();
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY+2/3*voltageUV+1/3*voltageVW);
+    ctx.translate(centerX5-100+angleXaxisDisplay,centerY+2/3*voltageUV+1/3*voltageVW);
     ctx.fillStyle = 'red';
     drawCircleFill(ctx,5);
     ctx.restore();
     //motor phase V
     ctx.save();
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY-1/3*voltageUV-2/3*voltageVW);
+    ctx.translate(centerX5-100+angleXaxisDisplay,centerY-1/3*voltageUV-2/3*voltageVW);
     ctx.fillStyle = 'green';
     drawCircleFill(ctx,5);
     ctx.restore();
     //motor phase W
     ctx.save();
-    ctx.translate(centerX-100+angleXaxisDisplay,centerY-1/3*voltageUV+1/3*voltageVW);
+    ctx.translate(centerX5-100+angleXaxisDisplay,centerY-1/3*voltageUV+1/3*voltageVW);
     ctx.fillStyle = 'blue';
     drawCircleFill(ctx,5);
     ctx.restore();
     //Graphs
     ctx.save();
-    ctx.translate(centerX-100,centerY);
+    ctx.translate(centerX5-100,centerY);
     let [voltMotUArrayDisplay,voltMotVArrayDisplay,voltMotWArrayDisplay] = motorPhases(voltMotUVArrayDisplay,voltMotVWArrayDisplay);
     //let UVarray = UArray-VArray;
     ctx.strokeStyle = 'red';

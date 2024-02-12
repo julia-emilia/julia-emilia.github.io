@@ -47,12 +47,30 @@ export function drawThreePointStar(ctx,radius){
     ctx.moveTo(0, 0);
     ctx.strokeStyle = 'red';
     drawArrow(ctx,radius);
+    ctx.save()
+    ctx.translate(radius,0);
+    ctx.rotate(Math.PI/180*150);
+    ctx.strokeStyle = 'magenta';
+    drawArrow(ctx,Math.sqrt(3)*radius);
+    ctx.restore()
     ctx.rotate(Math.PI/180*120);
     ctx.strokeStyle = 'blue';
     drawArrow(ctx,radius);
+    ctx.save()
+    ctx.translate(radius,0);
+    ctx.rotate(Math.PI/180*150);
+    ctx.strokeStyle = 'cyan';
+    drawArrow(ctx,Math.sqrt(3)*radius);
+    ctx.restore()
     ctx.rotate(Math.PI/180*120);
     ctx.strokeStyle = 'green';
     drawArrow(ctx,radius);
+    ctx.save()
+    ctx.translate(radius,0);
+    ctx.rotate(Math.PI/180*150);
+    ctx.strokeStyle = 'yellow';
+    drawArrow(ctx,Math.sqrt(3)*radius);
+    ctx.restore()
 }
 
 export function drawGraph(ctx,Xarray,Yarray){
