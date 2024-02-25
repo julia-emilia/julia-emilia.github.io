@@ -95,6 +95,11 @@
         <br />
         <label for="useSuperSinus">Use Harmonic injection (Supersinus):</label>
         <input type="checkbox" name="useSuperSinus" id="useSuperSinus" /><br />
+        <label for="overModTechnique">Choose Overmodulation technique:</label>
+        <select id="overModTechnique" name="overModTechnique">
+          <option value="cutoff">Cut off</option>
+          <option value="block">Block commutation</option>
+        </select>
 
         <div class="all-columns">
           <div class="small-column"></div>
@@ -129,6 +134,32 @@
             <span id="VoltMotRms"></span>
           </div>
         </div>
+        <div class="all-columns">
+          <div class="small-column"></div>
+          <div class="wide-column"></div>
+          <div class="wide-column"></div>
+          <div class="wide-column"></div>
+          <div class="wide-column">
+            $U_{\Delta,pp}=$
+            <span id="VoltDeltaPpApprox"></span>
+            <br />
+            $\hat{U}_{\Delta}= $
+            <span id="VoltDeltaAmplApprox"></span>
+            <br />
+            $U_{\Delta,rms}=$
+            <span id="VoltDeltaRmsApprox"></span>
+          </div>
+          <div class="wide-column">
+            $U_{ph,pp}= $
+            <span id="VoltMotPpApprox"></span>
+            <br />
+            $\hat{U}_{ph}= $
+            <span id="VoltMotAmplApprox"></span>
+            <br />
+            $U_{ph,rms}= $
+            <span id="VoltMotRmsApprox"></span>
+          </div>
+        </div>
         <canvas id="hexagonCanvas" height="300" width="1400"> </canvas>
         <div class="all-columns">
           <div class="wide-column">
@@ -159,6 +190,32 @@
             $U_{ph,pp}=\frac{2}{\sqrt{3}}U_{DC}$ <br />
             $\hat{U}_{ph}=\frac{1}{\sqrt{3}}U_{DC}$ <br />
             $U_{ph,rms}=\frac{1}{\sqrt{2}\sqrt{3}}U_{DC}$
+          </div>
+        </div>
+        <div class="all-columns">
+          <div class="small-column"></div>
+          <div class="wide-column"></div>
+          <div class="wide-column"></div>
+          <div class="wide-column"></div>
+          <div class="wide-column">
+            $U_{\Delta,pp,1}=$
+            <span id="VoltDeltaPp1"></span>
+            <br />
+            $\hat{U}_{\Delta,1}= $
+            <span id="VoltDeltaAmpl1"></span>
+            <br />
+            $U_{\Delta,rms,1}=$
+            <span id="VoltDeltaRms1"></span>
+          </div>
+          <div class="wide-column">
+            $U_{ph,pp}= $
+            <span id="VoltMotPp1"></span>
+            <br />
+            $\hat{U}_{ph}= $
+            <span id="VoltMotAmpl1"></span>
+            <br />
+            $U_{ph,rms}= $
+            <span id="VoltMotRms1"></span>
           </div>
         </div>
       </article>

@@ -1,4 +1,4 @@
-import { phasesFromArrow, superSinus, phaseToPhaseGraph, motorPhases,sinusGraph, drawLimits, blockCommutation,limitToHex } from "./modulation.js";
+import { phasesFromArrow, superSinus, phaseToPhaseGraph, motorPhases,sinusGraph, drawLimits, blockCommutation,limitToHex, ArrayRms, fourierGoertzel, DFT } from "./modulation.js";
 import { drawHexagon,drawArrow, drawCircle, drawThreePointStar,drawCircleFill,drawGraph} from "./canvasUtils.js";
 
 function GetElectricalFrequency() {
@@ -32,6 +32,7 @@ function canvasAnimation(){
   //Get user inputs
   let voltInvDc = parseFloat(document.getElementById("VoltDc").value,10);
   let modFacInput = parseFloat(document.getElementById("modFac").value,10);
+  let overModTechnique = document.getElementById("overModTechnique").value;
   let outputDiv1 = document.getElementById("modFacOutput");
   outputDiv1.innerHTML = modFacInput.toFixed(2);
   // Get the checkbox element by its ID
@@ -49,11 +50,19 @@ function canvasAnimation(){
     }
     let blockCommOperation = false;
     let cutOffOperation = false;
-    if(modFacInput>1){
     
-    cutOffOperation = true;
+    
+    if(modFacInput>1){
+      if (overModTechnique == "block"){
+        blockCommOperation = true;
+        cutOffOperation = false;
+      }else{
+        blockCommOperation = false;
+        cutOffOperation = true;
+      }
     superSinusOperation = true;
     }
+    
   if(canvas.getContext){
   const ctx = canvas.getContext('2d');
   
@@ -85,7 +94,7 @@ function canvasAnimation(){
     }
    
   }
-  let uphphAmpl = voltCtrlModAmpl*Math.sqrt(3);
+  let uphphAmpl = voltCtrlSVAmpl*Math.sqrt(3);
   
   let [voltCtrlUInstant,voltCtrlVInstant,voltCtrlWInstant] = phasesFromArrow(voltCtrlModAmpl,angleInv);
   let voltInvZeroInstant = 0;
@@ -98,7 +107,21 @@ function canvasAnimation(){
    let voltInvUInstant = voltCtrlUInstant+voltInvZeroInstant;
    let voltInvVInstant = voltCtrlVInstant+voltInvZeroInstant;
    let voltInvWInstant = voltCtrlWInstant+voltInvZeroInstant;
-   // output numbers
+
+   //calculate arrays over one period
+   let [angleArray,voltInvUArray,voltInvVArray,voltInvWArray,U0Array] =sinusGraph(voltCtrlSVAmpl,200,superSinusOperation,blockCommOperation,cutOffOperation,voltInvDc);
+   let [voltMotUVArray,voltMotVWArray,voltMotWUArray] = phaseToPhaseGraph(voltInvUArray,voltInvVArray,voltInvWArray);
+   let [voltMotUArray,voltMotVArray,voltMotWArray] = motorPhases(voltMotUVArray,voltMotVWArray);
+   //calculate approximate values
+   let uphphAmplApprox = Math.max(...voltMotUVArray);
+   let voltMotAmplApprox = Math.max(...voltMotUArray);
+   let uphphRmsApprox = ArrayRms(voltMotUVArray);
+   let voltMotRmsApprox = ArrayRms(voltMotUArray);
+
+   let uphphAmpl1Approx = DFT(voltMotUVArray,1);
+   let voltMotAmpl1Approx = DFT(voltMotUArray,1);
+
+   // output numbers - ideal 
    let outputVoltDc= document.getElementById("VoltDcOut");
   outputVoltDc.innerHTML = (voltInvDc).toFixed(2)+" V";
   let outputVoltSupersinus= document.getElementById("VoltSupersinus");
@@ -114,12 +137,43 @@ function canvasAnimation(){
    outputVoltDeltaRms.innerHTML = (uphphAmpl/Math.sqrt(2)).toFixed(2)+" V";
    //Motor/star
    let outputVoltMotPp = document.getElementById("VoltMotPp");
-   outputVoltMotPp.innerHTML = (2*voltCtrlModAmpl).toFixed(2)+" V";
+   outputVoltMotPp.innerHTML = (2*voltCtrlSVAmpl).toFixed(2)+" V";
    let outputVoltMotAmpl = document.getElementById("VoltMotAmpl");
-   outputVoltMotAmpl.innerHTML = (voltCtrlModAmpl).toFixed(2)+" V";
+   outputVoltMotAmpl.innerHTML = (voltCtrlSVAmpl).toFixed(2)+" V";
    let outputVoltMotRms = document.getElementById("VoltMotRms");
-   outputVoltMotRms.innerHTML = (voltCtrlModAmpl/Math.sqrt(2)).toFixed(2)+" V";
-  //scale for display 
+   outputVoltMotRms.innerHTML = (voltCtrlSVAmpl/Math.sqrt(2)).toFixed(2)+" V";
+   
+   // output numbers - approximate 
+   //Delta
+   let outputVoltDeltaPpApprox = document.getElementById("VoltDeltaPpApprox");
+   outputVoltDeltaPpApprox.innerHTML = (2*uphphAmplApprox).toFixed(2)+" V";
+   let outputVoltDeltaAmplApprox = document.getElementById("VoltDeltaAmplApprox");
+   outputVoltDeltaAmplApprox.innerHTML = (uphphAmplApprox).toFixed(2)+" V";
+   let outputVoltDeltaRmsApprox = document.getElementById("VoltDeltaRmsApprox");
+   outputVoltDeltaRmsApprox.innerHTML = (uphphRmsApprox).toFixed(2)+" V";
+   //Motor/star
+   let outputVoltMotPpApprox = document.getElementById("VoltMotPpApprox");
+   outputVoltMotPpApprox.innerHTML = (2*voltMotAmplApprox).toFixed(2)+" V";
+   let outputVoltMotAmplApprox = document.getElementById("VoltMotAmplApprox");
+   outputVoltMotAmplApprox.innerHTML = (voltMotAmplApprox).toFixed(2)+" V";
+   let outputVoltMotRmsApprox = document.getElementById("VoltMotRmsApprox");
+   outputVoltMotRmsApprox.innerHTML = (voltMotRmsApprox).toFixed(2)+" V";
+  
+   //first order
+   let outputVoltDeltaPp1 = document.getElementById("VoltDeltaPp1");
+   outputVoltDeltaPp1.innerHTML = (2*uphphAmpl1Approx).toFixed(2)+" V";
+   let outputVoltDeltaAmpl1Approx = document.getElementById("VoltDeltaAmpl1");
+   outputVoltDeltaAmpl1Approx.innerHTML = (uphphAmpl1Approx).toFixed(2)+" V";
+   let outputVoltDeltaRms1Approx = document.getElementById("VoltDeltaRms1");
+   outputVoltDeltaRms1Approx.innerHTML = (uphphAmpl1Approx/Math.sqrt(2)).toFixed(2)+" V";
+
+   let outputVoltMotPp1 = document.getElementById("VoltMotPp1");
+   outputVoltMotPp1.innerHTML = (2*voltMotAmpl1Approx).toFixed(2)+" V";
+   let outputVoltMotAmpl1Approx = document.getElementById("VoltMotAmpl1");
+   outputVoltMotAmpl1Approx.innerHTML = (voltMotAmpl1Approx).toFixed(2)+" V";
+   let outputVoltMotRms1 = document.getElementById("VoltMotRms1");
+   outputVoltMotRms1.innerHTML = (voltMotAmpl1Approx/Math.sqrt(2)).toFixed(2)+" V";
+   //scale for display 
   let displayFactor = 50;
   while(displayFactor*voltInvDc >150){
     displayFactor = displayFactor*2/3;
@@ -138,6 +192,19 @@ function canvasAnimation(){
   let voltInvVInstantDisplay = displayFactor*voltInvVInstant;
   let voltInvWInstantDisplay = displayFactor*voltInvWInstant;
   
+  let angleArrayDisplay = angleArray;
+  let voltInvUArrayDisplay = voltInvUArray.map((currItem) => currItem*displayFactor );
+  let voltInvVArrayDisplay = voltInvVArray.map((currItem) => currItem*displayFactor );
+  let voltInvWArrayDisplay = voltInvWArray.map((currItem) => currItem*displayFactor );
+  let U0ArrayDisplay = U0Array.map((currItem) => currItem*displayFactor );
+    
+  let voltMotUVArrayDisplay = voltMotUVArray.map((currItem) => currItem*displayFactor );
+  let voltMotVWArrayDisplay = voltMotVWArray.map((currItem) => currItem*displayFactor );
+  let voltMotWUArrayDisplay = voltMotWUArray.map((currItem) => currItem*displayFactor );
+  
+  let voltMotUArrayDisplay = voltMotUArray.map((currItem) => currItem*displayFactor );
+  let voltMotVArrayDisplay = voltMotVArray.map((currItem) => currItem*displayFactor );
+  let voltMotWArrayDisplay = voltMotWArray.map((currItem) => currItem*displayFactor );
   
   // canvas center X and Y
   const centerX1 = 125;
@@ -261,16 +328,15 @@ function canvasAnimation(){
     //calculate the whole graph then display the three lines
    // let angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay,U0Array = [];
    
-    let [angleDisplayArray,voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay,U0Array] =sinusGraph(voltCtrlSVAmplDisplay,200,superSinusOperation,blockCommOperation,cutOffOperation,voltInvDcDisplay);
     
     ctx.strokeStyle = 'red';
-    drawGraph(ctx,angleDisplayArray,voltInvUArrayDisplay);
+    drawGraph(ctx,angleArrayDisplay,voltInvUArrayDisplay);
     ctx.strokeStyle = 'green';
-    drawGraph(ctx,angleDisplayArray,voltInvVArrayDisplay);
+    drawGraph(ctx,angleArrayDisplay,voltInvVArrayDisplay);
     ctx.strokeStyle = 'blue';
-    drawGraph(ctx,angleDisplayArray,voltInvWArrayDisplay);
+    drawGraph(ctx,angleArrayDisplay,voltInvWArrayDisplay);
     ctx.strokeStyle = 'grey';
-    drawGraph(ctx,angleDisplayArray,U0Array);
+    drawGraph(ctx,angleArrayDisplay,U0ArrayDisplay);
     ctx.restore();
     //// draw phase-phase voltage
     
@@ -307,14 +373,14 @@ function canvasAnimation(){
     //Graphs
     ctx.save();
     ctx.translate(centerX4-100,centerY);
-    let [voltMotUVArrayDisplay,voltMotVWArrayDisplay,voltMotWUArrayDisplay] = phaseToPhaseGraph(voltInvUArrayDisplay,voltInvVArrayDisplay,voltInvWArrayDisplay);
+    
     //let UVarray = UArray-VArray;
     ctx.strokeStyle = 'yellow';
-    drawGraph(ctx,angleDisplayArray,voltMotUVArrayDisplay);
+    drawGraph(ctx,angleArrayDisplay,voltMotUVArrayDisplay);
     ctx.strokeStyle = 'cyan';
-    drawGraph(ctx,angleDisplayArray,voltMotVWArrayDisplay);
+    drawGraph(ctx,angleArrayDisplay,voltMotVWArrayDisplay);
     ctx.strokeStyle = 'magenta';
-    drawGraph(ctx,angleDisplayArray,voltMotWUArrayDisplay);
+    drawGraph(ctx,angleArrayDisplay,voltMotWUArrayDisplay);
     ctx.restore();
     //// draw motor phases
     
@@ -348,14 +414,14 @@ function canvasAnimation(){
     //Graphs
     ctx.save();
     ctx.translate(centerX5-100,centerY);
-    let [voltMotUArrayDisplay,voltMotVArrayDisplay,voltMotWArrayDisplay] = motorPhases(voltMotUVArrayDisplay,voltMotVWArrayDisplay);
+    
     //let UVarray = UArray-VArray;
     ctx.strokeStyle = 'red';
-    drawGraph(ctx,angleDisplayArray,voltMotUArrayDisplay);
+    drawGraph(ctx,angleArrayDisplay,voltMotUArrayDisplay);
     ctx.strokeStyle = 'green';
-    drawGraph(ctx,angleDisplayArray,voltMotVArrayDisplay);
+    drawGraph(ctx,angleArrayDisplay,voltMotVArrayDisplay);
     ctx.strokeStyle = 'blue';
-    drawGraph(ctx,angleDisplayArray,voltMotWArrayDisplay);
+    drawGraph(ctx,angleArrayDisplay,voltMotWArrayDisplay);
     ctx.restore();
 
     window.requestAnimationFrame(canvasAnimation);

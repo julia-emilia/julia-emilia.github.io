@@ -38,7 +38,7 @@ export function sinusGraph(amplitudeIn,displayLength,useSuperSinus,useBlockComm,
 let amplitude = amplitudeIn;
     for(let k=0; k<angleArray.length;k++){
         if(useBlockComm == true){
-            [U,V,W] = phasesFromArrow(amplitude,blockCommutation(angleArray[k]));
+            [U,V,W] = phasesFromArrow(2*voltInvDc/3,blockCommutation(angleArray[k]));
             useSuperSinus = true;
             U0 = superSinus(U,V,W);
         }else{
@@ -150,7 +150,7 @@ export function blockCommutation(angleSV){
 export function limitToHex(angle,udc,SVAmpl){
     
     let normAngle =angle%(Math.PI/3);
-    console.log(normAngle)
+    //console.log(normAngle)
     let sinAngle = Math.sin(normAngle);
     let cosAlpha = Math.cos(normAngle);
     let cosBeta = Math.cos(Math.PI/3-normAngle);
@@ -167,4 +167,60 @@ export function limitToHex(angle,udc,SVAmpl){
         outputAmpl = SVAmpl;
     }
     return outputAmpl;
+}
+
+export function ArrayRms(inputArray){
+    let squares = inputArray.map((x)=> x*x);
+    let sum = 0;
+    squares.map((x)=> sum= sum+x);
+    let mean = sum/inputArray.length;
+    let output = Math.sqrt(mean);
+    return output;
+}
+
+export function fourierGoertzel(signalArray){
+    let omega = Math.PI/2;
+    let N = signalArray.length-1;
+    let U = [];
+    U[N+2] = 0;
+    U[N+1] = 0;
+    let k = N;
+    let cosOmega = Math.cos(omega);
+    let sinOmega = Math.sin(omega);
+    while(k>=1){
+        U[k] = signalArray[k]+2*U[k+1]*cosOmega-U[k+2];
+
+
+        k = k-1;
+    }
+    let C = signalArray[0]+U[1]*cosOmega-U[2];
+    let S = U[1]*sinOmega;
+
+    let ampl = Math.sqrt(C*C+S*S);
+
+    return ampl;
+}
+
+export function DFT(signalArray,k){
+    //k is the harmonic, 0: average, 1: first order etc.
+    let N = signalArray.length;
+    let theta = 0;
+    let ck = 0;
+    for(let j = 0; j<N;j++){
+        theta = -2*Math.PI*j*k/N;
+        ck = ck + Math.cos(theta)*signalArray[j]; 
+    }
+    let sk = 0;
+    for(let j = 0; j<N;j++){
+        theta = -2*Math.PI*j*k/N;
+        sk = sk + Math.sin(theta)*signalArray[j]; 
+    }
+    ck = 2/N*ck;
+    sk = 2/N*sk;
+    //console.log('c1: ' +c1)
+    //console.log('s1: '+ s1)
+    let ampl = Math.sqrt(ck*ck+sk*sk)
+
+
+    return ampl;
 }
