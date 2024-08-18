@@ -76,9 +76,16 @@ export function displayJsonAsTable(jsonData,columns) {
       cell.textContent = data[key];
     });
   });
+  
 
   // Append the table to the body or any desired HTML element
-  document.body.appendChild(table);
+  const fragment = document.createDocumentFragment();
+const li = fragment
+  .appendChild(document.createElement("main"))
+  .appendChild(table);
+
+document.body.appendChild(fragment);
+
 }
 
   function findIndecesToDelete(table,columnName,valueToKeep){
