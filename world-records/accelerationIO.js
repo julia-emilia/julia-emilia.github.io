@@ -70,7 +70,9 @@ async function displayDatabase(){
 }
 
   function refresh(){
-    location.reload();
+    const fragment = document.getElementById("main");
+    fragment.remove();
+    displayDatabase();
   }
   displayDatabase();
 

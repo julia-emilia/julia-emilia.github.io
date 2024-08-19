@@ -86,9 +86,11 @@ async function displayDatabase(){
     
 }
 
-  function refresh(){
-    location.reload();
-  }
+function refresh(){
+  const fragment = document.getElementById("main");
+  fragment.remove();
+  displayDatabase();
+}
   displayDatabase();
 
 document.querySelector('#displayButton').addEventListener('click', refresh);

@@ -80,8 +80,10 @@ export function displayJsonAsTable(jsonData,columns) {
 
   // Append the table to the body or any desired HTML element
   const fragment = document.createDocumentFragment();
+  const mainSec = document.createElement("main");
+  mainSec.id = "main";
 const li = fragment
-  .appendChild(document.createElement("main"))
+  .appendChild(mainSec)
   .appendChild(table);
 
 document.body.appendChild(fragment);
