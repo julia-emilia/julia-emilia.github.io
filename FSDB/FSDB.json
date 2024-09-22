@@ -2,98 +2,476 @@
 "Tabelle1":[
  {
   "discipline": "ACC",
-  "Event": "East",
-  "year": 2023,
-  "Date": "2023-08-04",
-  "Team": "Stuttgar U",
+  "Event": "Italy",
+  "year": 2024,
+  "Date": "2024-09-05",
+  "Team": "Modena UNIMORE",
   "class": "C",
+  "run": 3,
   "bestrun": 1,
-  "time": 4.052,
+  "time": 3.864,
   "cones": 0,
   "off course": 0,
-  "adj time": 4.052,
+  "adj time": 3.864,
   "points": 75,
   "place": 1,
+  "wet": 0,
+  "curr class WR": 3.606,
+  "current WR": 2.999,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "Italy",
+  "year": 2024,
+  "Date": "2024-09-06",
+  "Team": "Prague CTU",
+  "class": "D",
+  "run": 1,
+  "bestrun": 1,
+  "time": 3.921,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 3.921,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 3.293,
+  "current WR": 2.999,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "Italy",
+  "year": 2024,
+  "Date": "2024-09-07",
+  "Team": "Graz TU",
+  "class": "E",
+  "run": 3,
+  "bestrun": 1,
+  "time": 3.397,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 3.397,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 2.999,
+  "current WR": 2.999,
   "Spalte1": 0
  },
  {
   "discipline": "SKP",
-  "Event": "East",
-  "year": 2023,
-  "Date": "2023-08-04",
-  "Team": "Karlsruhe UAS",
+  "Event": "Italy",
+  "year": 2024,
+  "Date": "2024-09-08",
+  "Team": "Modena UNIMORE",
   "class": "C",
+  "run": 4,
   "bestrun": 1,
-  "time": 4.671,
+  "time": 4.879,
   "cones": 0,
   "off course": 0,
-  "adj time": 4.671,
+  "adj time": 4.879,
   "points": 75,
   "place": 1,
+  "wet": 0,
+  "curr class WR": 4.65,
+  "current WR": 4.135,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "SKP",
+  "Event": "Italy",
+  "year": 2024,
+  "Date": "2024-09-09",
+  "Team": "Prague CTU",
+  "class": "D",
+  "run": 1,
+  "bestrun": 1,
+  "time": 5.214,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 5.214,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 4.645,
+  "current WR": 4.135,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "SKP",
+  "Event": "Italy",
+  "year": 2024,
+  "Date": "2024-09-10",
+  "Team": "Graz TU",
+  "class": "E",
+  "run": 4,
+  "bestrun": 1,
+  "time": 4.386,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.386,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 4.135,
+  "current WR": 4.135,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "Germany",
+  "year": 2024,
+  "Date": "2024-08-16",
+  "Team": "Dresden TU",
+  "class": "E",
+  "run": 2,
+  "bestrun": 1,
+  "time": 3.38,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 3.38,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 2.999,
+  "current WR": 2.999,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "Germany",
+  "year": 2024,
+  "Date": "2024-08-16",
+  "Team": "Dresden TU",
+  "class": "D",
+  "run": 2,
+  "bestrun": 1,
+  "time": 3.294,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 3.294,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 3.293,
+  "current WR": 2.999,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "SKP",
+  "Event": "Germany",
+  "year": 2024,
+  "Date": "2024-08-16",
+  "Team": "Dresden TU",
+  "class": "E",
+  "run": 2,
+  "bestrun": 1,
+  "time": 4.627,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.627,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 4.135,
+  "current WR": 4.135,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "SKP",
+  "Event": "Germany",
+  "year": 2024,
+  "Date": "2024-08-15",
+  "Team": "Dresden TU",
+  "class": "D",
+  "run": 1,
+  "bestrun": 1,
+  "time": 4.886,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.886,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 4.645,
+  "current WR": 4.135,
   "Spalte1": 0
  },
  {
   "discipline": "ACC",
   "Event": "East",
-  "year": 2023,
-  "Date": "2023-08-04",
-  "Team": "Delft TU",
-  "class": "E",
+  "year": 2024,
+  "Date": "2024-07-31",
+  "Team": "Cerber Motorsport",
+  "class": "C",
   "bestrun": 1,
-  "time": 2.999,
+  "time": 4.048,
   "cones": 0,
   "off course": 0,
-  "adj time": 2.999,
+  "adj time": 4.048,
   "points": 75,
   "place": 1,
+  "wet": 0,
+  "curr class WR": 3.606,
+  "current WR": 2.999,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "East",
+  "year": 2024,
+  "Date": "2024-07-31",
+  "Team": "Tallinn U",
+  "class": "E",
+  "bestrun": 1,
+  "time": 3.381,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 3.381,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 2.999,
+  "current WR": 2.999,
   "Spalte1": 0
  },
  {
   "discipline": "SKP",
   "Event": "East",
-  "year": 2023,
-  "Date": "2023-08-04",
+  "year": 2024,
+  "Date": "2024-07-31",
+  "Team": "Cerber Motorsport",
+  "class": "C",
+  "bestrun": 1,
+  "time": 4.924,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.924,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 4.65,
+  "current WR": 4.355,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "East",
+  "year": 2024,
+  "Date": "2024-07-31",
+  "Team": "Karlsruhe KIT",
+  "class": "D",
+  "bestrun": 1,
+  "time": 3.293,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 3.293,
+  "points": 100,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 3.445,
+  "current WR": 2.999,
+  "Spalte1": 1,
+  "note": "new D WR, curr D WR"
+ },
+ {
+  "discipline": "SKP",
+  "Event": "East",
+  "year": 2024,
+  "Date": "2024-07-31",
   "Team": "Graz TU",
   "class": "E",
   "bestrun": 1,
-  "time": 4.513,
+  "time": 4.135,
   "cones": 0,
   "off course": 0,
-  "adj time": 4.513,
+  "adj time": 4.135,
   "points": 75,
   "place": 1,
-  "Spalte1": 0
- },
- {
-  "discipline": "ACC",
-  "Event": "East",
-  "year": 2023,
-  "Date": "2023-08-04",
-  "Team": "Trondheim NTNU",
-  "class": "D",
-  "bestrun": 1,
-  "time": 3.555,
-  "cones": 0,
-  "off course": 0,
-  "adj time": 3.555,
-  "points": 75,
-  "place": 1,
-  "Spalte1": 0
+  "wet": 0,
+  "curr class WR": 4.355,
+  "current WR": 4.355,
+  "Spalte1": 1,
+  "note": "new WR, new E WR, curr WR, curr E WR"
  },
  {
   "discipline": "SKP",
   "Event": "East",
-  "year": 2023,
-  "Date": "2023-08-04",
-  "Team": "Chalmers U",
+  "year": 2024,
+  "Date": "2024-07-31",
+  "Team": "Karlsruhe KIT",
   "class": "D",
   "bestrun": 1,
-  "time": 4.967,
+  "time": 4.645,
   "cones": 0,
   "off course": 0,
-  "adj time": 4.967,
+  "adj time": 4.645,
+  "points": 100,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 4.849,
+  "current WR": 4.355,
+  "Spalte1": 1,
+  "note": "new D WR, curr D WR"
+ },
+ {
+  "discipline": "SKP",
+  "Event": "Austria",
+  "year": 2024,
+  "Date": "2024-07-24",
+  "Team": "Valencia",
+  "class": "C",
+  "bestrun": 1,
+  "time": 4.881,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.881,
   "points": 75,
   "place": 1,
+  "wet": 0,
+  "curr class WR": 4.65,
+  "current WR": 4.404,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "Austria",
+  "year": 2024,
+  "Date": "2024-07-24",
+  "Team": "Modena UNIMORE",
+  "class": "C",
+  "bestrun": 1,
+  "time": 4.151,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.151,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 3.606,
+  "current WR": 2.999,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "Austria",
+  "year": 2024,
+  "Date": "2024-07-24",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "run": 4,
+  "bestrun": 1,
+  "time": 3.385,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 3.385,
+  "points": 75,
+  "place": 1,
+  "wet": 0,
+  "curr class WR": 2.999,
+  "current WR": 2.999,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "SKP",
+  "Event": "Austria",
+  "year": 2024,
+  "Date": "2024-07-24",
+  "Team": "Graz TU",
+  "class": "E",
+  "run": 2,
+  "bestrun": 1,
+  "time": 4.355,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.355,
+  "points": 75,
+  "place": 1,
+  "curr class WR": 4.404,
+  "current WR": 4.404,
+  "Spalte1": 1,
+  "note": "new WR, new E WR"
+ },
+ {
+  "discipline": "ACC",
+  "Event": "Netherlands",
+  "year": 2024,
+  "Date": "2024-07-17",
+  "Team": "Madrid",
+  "class": "C",
+  "run": 2,
+  "bestrun": 1,
+  "time": 4.491,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.491,
+  "points": 75,
+  "place": 1,
+  "curr class WR": 3.606,
+  "current WR": 2.999,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "SKP",
+  "Event": "Netherlands",
+  "year": 2024,
+  "Date": "2024-07-17",
+  "Team": "Graz UAS",
+  "class": "E",
+  "run": 1,
+  "bestrun": 1,
+  "time": 4.701,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.701,
+  "points": 75,
+  "place": 1,
+  "wet": 1,
+  "curr class WR": 4.701,
+  "current WR": 4.404,
+  "Spalte1": 1,
+  "note": "new Wet pad record, curr Wet pad record"
+ },
+ {
+  "discipline": "ACC",
+  "Event": "Netherlands",
+  "year": 2024,
+  "Date": "2024-07-17",
+  "Team": "Aachen RWTH",
+  "class": "E",
+  "run": 2,
+  "bestrun": 1,
+  "time": 3.348,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 3.348,
+  "points": 75,
+  "place": 1,
+  "curr class WR": 2.999,
+  "current WR": 2.999,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "SKP",
+  "Event": "Netherlands",
+  "year": 2024,
+  "Date": "2024-07-17",
+  "Team": "Manresa",
+  "class": "C",
+  "run": 4,
+  "bestrun": 1,
+  "time": 5.33,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 5.33,
+  "points": 75,
+  "place": 1,
+  "wet": 1,
+  "curr class WR": 5.128,
+  "current WR": 4.404,
   "Spalte1": 0
  },
  {
@@ -111,6 +489,8 @@
   "adj time": 4.066,
   "points": 50,
   "place": 1,
+  "curr class WR": 3.606,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -147,6 +527,8 @@
   "adj time": 3.271,
   "points": 50,
   "place": 1,
+  "curr class WR": 3.207,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -183,6 +565,8 @@
   "adj time": 3.713,
   "points": 75,
   "place": 1,
+  "curr class WR": 3.445,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -206,6 +590,115 @@
  },
  {
   "discipline": "ACC",
+  "Event": "East",
+  "year": 2023,
+  "Date": "2023-08-04",
+  "Team": "Stuttgar U",
+  "class": "C",
+  "bestrun": 1,
+  "time": 4.052,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.052,
+  "points": 75,
+  "place": 1,
+  "curr class WR": 3.606,
+  "current WR": 3.207,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "SKP",
+  "Event": "East",
+  "year": 2023,
+  "Date": "2023-08-04",
+  "Team": "Karlsruhe UAS",
+  "class": "C",
+  "bestrun": 1,
+  "time": 4.671,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.671,
+  "points": 75,
+  "place": 1,
+  "curr class WR": 4.65,
+  "current WR": 4.404,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "East",
+  "year": 2023,
+  "Date": "2023-08-04",
+  "Team": "Delft TU",
+  "class": "E",
+  "bestrun": 1,
+  "time": 2.999,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 2.999,
+  "points": 75,
+  "place": 1,
+  "curr class WR": 3.207,
+  "current WR": 3.207,
+  "Spalte1": 1,
+  "note": "new WR, new E WR, curr WR, curr E WR"
+ },
+ {
+  "discipline": "SKP",
+  "Event": "East",
+  "year": 2023,
+  "Date": "2023-08-04",
+  "Team": "Graz TU",
+  "class": "E",
+  "bestrun": 1,
+  "time": 4.513,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.513,
+  "points": 75,
+  "place": 1,
+  "curr class WR": 4.404,
+  "current WR": 4.404,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
+  "Event": "East",
+  "year": 2023,
+  "Date": "2023-08-04",
+  "Team": "Trondheim NTNU",
+  "class": "D",
+  "bestrun": 1,
+  "time": 3.555,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 3.555,
+  "points": 75,
+  "place": 1,
+  "curr class WR": 3.445,
+  "current WR": 3.207,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "SKP",
+  "Event": "East",
+  "year": 2023,
+  "Date": "2023-08-04",
+  "Team": "Chalmers U",
+  "class": "D",
+  "bestrun": 1,
+  "time": 4.967,
+  "cones": 0,
+  "off course": 0,
+  "adj time": 4.967,
+  "points": 75,
+  "place": 1,
+  "curr class WR": 4.849,
+  "current WR": 4.404,
+  "Spalte1": 0
+ },
+ {
+  "discipline": "ACC",
   "Event": "Austria",
   "year": 2023,
   "Date": "2023-07-27",
@@ -220,6 +713,8 @@
   "points": 75,
   "place": 1,
   "wet": 0,
+  "curr class WR": 3.606,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -238,6 +733,8 @@
   "points": 75,
   "place": 1,
   "wet": 0,
+  "curr class WR": 3.207,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -259,7 +756,7 @@
   "curr class WR": 4.43,
   "current WR": 4.43,
   "Spalte1": 1,
-  "note": "new WR, new E WR, curr WR, curr E WR"
+  "note": "new WR, new E WR"
  },
  {
   "discipline": "SKP",
@@ -296,6 +793,8 @@
   "adj time": 3.654,
   "points": 75,
   "place": 1,
+  "curr class WR": 3.606,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -313,6 +812,8 @@
   "adj time": 4.497,
   "points": 75,
   "place": 1,
+  "curr class WR": 3.445,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -330,6 +831,8 @@
   "adj time": 3.455,
   "points": 75,
   "place": 1,
+  "curr class WR": 3.207,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -406,6 +909,8 @@
   "points": 75,
   "place": 1,
   "wet": 0,
+  "curr class WR": 3.606,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -444,6 +949,8 @@
   "points": 75,
   "place": 1,
   "wet": 1,
+  "curr class WR": 3.207,
+  "current WR": 3.207,
   "Spalte1": 0
  },
  {
@@ -462,7 +969,7 @@
   "points": 75,
   "place": 1,
   "wet": 1,
-  "curr class WR": 4.535,
+  "curr class WR": 4.901,
   "current WR": 4.535,
   "Spalte1": 0
  },
@@ -1960,7 +2467,7 @@
   "curr class WR": 4.849,
   "current WR": 4.598,
   "Spalte1": 1,
-  "note": "new D WR, curr D WR"
+  "note": "new D WR"
  },
  {
   "discipline": "ACC",
@@ -3665,7 +4172,7 @@
   "curr class WR": 3.445,
   "current WR": 3.207,
   "Spalte1": 1,
-  "note": "new D WR, curr D WR"
+  "note": "new D WR"
  },
  {
   "discipline": "OVR",
@@ -4136,6 +4643,39 @@
   "source": "https:\/\/www.sae.org\/attend\/student-events\/formula-sae-michigan\/awards-results"
  },
  {
+  "discipline": "OVR",
+  "Event": "Australasia",
+  "year": 2018,
+  "Date": "2018-12-09",
+  "Team": "München TU",
+  "class": "E",
+  "points": 910,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Australasia",
+  "year": 2018,
+  "Date": "2018-12-09",
+  "Team": "Monash U",
+  "class": "E",
+  "points": 795,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Australasia",
+  "year": 2018,
+  "Date": "2018-12-09",
+  "Team": "Auckland U",
+  "class": "E",
+  "points": 714,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
   "discipline": "SKP",
   "Event": "Australasia",
   "year": 2018,
@@ -4208,6 +4748,72 @@
   "source": "http:\/\/racing.natsoft.com.au\/642399818\/object_791479.83o\/Result?1"
  },
  {
+  "discipline": "OVR",
+  "Event": "Japan",
+  "year": 2018,
+  "Date": "2018-09-08",
+  "Team": "Nagoya U",
+  "class": "E",
+  "points": 777,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Japan",
+  "year": 2018,
+  "Date": "2018-09-08",
+  "Team": "Shanghai",
+  "class": "E",
+  "points": 678,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Japan",
+  "year": 2018,
+  "Date": "2018-09-08",
+  "Team": "Toyohashi",
+  "class": "E",
+  "points": 582,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Spain",
+  "year": 2018,
+  "Date": "2018-08-26",
+  "Team": "Stuttgart DHBW",
+  "class": "E",
+  "points": 880,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Spain",
+  "year": 2018,
+  "Date": "2018-08-26",
+  "Team": "Stuttgart U",
+  "class": "E",
+  "points": 810,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Spain",
+  "year": 2018,
+  "Date": "2018-08-26",
+  "Team": "Amberg-Weiden OTH",
+  "class": "E",
+  "points": 766,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
   "discipline": "SKP",
   "Event": "Spain",
   "year": 2018,
@@ -4248,6 +4854,39 @@
   "current WR": 4.598,
   "Spalte1": 0,
   "source": "https:\/\/sites.google.com\/view\/fss18"
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2018,
+  "Date": "2018-08-12",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 884,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2018,
+  "Date": "2018-08-12",
+  "Team": "Trondheim NTNU",
+  "class": "E",
+  "points": 859,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2018,
+  "Date": "2018-08-12",
+  "Team": "Amberg-Weiden OTH",
+  "class": "E",
+  "points": 837,
+  "place": 3,
+  "Spalte1": 1
  },
  {
   "discipline": "SKP",
@@ -4469,6 +5108,39 @@
   "source": "https:\/\/web.archive.org\/web\/20190723045134\/https:\/\/fsczech.cz\/2018\/index.php"
  },
  {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2018,
+  "Date": "2018-08-02",
+  "Team": "Hamburg TU",
+  "class": "E",
+  "points": 826,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2018,
+  "Date": "2018-08-02",
+  "Team": "Freiberg TU",
+  "class": "E",
+  "points": 814,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2018,
+  "Date": "2018-08-02",
+  "Team": "Göteborg TU",
+  "class": "E",
+  "points": 811,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
   "discipline": "SKP",
   "Event": "Austria",
   "year": 2018,
@@ -4530,6 +5202,39 @@
   "curr class WR": 4.627,
   "current WR": 4.627,
   "Spalte1": 0
+ },
+ {
+  "discipline": "OVR",
+  "Event": "East",
+  "year": 2018,
+  "Date": "2018-07-22",
+  "Team": "Delft TU",
+  "class": "E",
+  "points": 961,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "East",
+  "year": 2018,
+  "Date": "2018-07-22",
+  "Team": "Tallinn U",
+  "class": "E",
+  "points": 895,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "East",
+  "year": 2018,
+  "Date": "2018-07-22",
+  "Team": "Freiberg TU",
+  "class": "E",
+  "points": 785,
+  "place": 3,
+  "Spalte1": 1
  },
  {
   "discipline": "SKP",
@@ -4620,6 +5325,72 @@
   "curr class WR": 7.585,
   "current WR": 4.627,
   "Spalte1": 0
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Italy",
+  "year": 2018,
+  "Date": "2018-07-15",
+  "Team": "Tallinn U",
+  "class": "E",
+  "points": 958,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Italy",
+  "year": 2018,
+  "Date": "2018-07-15",
+  "Team": "Corvallis OSU",
+  "class": "E",
+  "points": 901,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Italy",
+  "year": 2018,
+  "Date": "2018-07-15",
+  "Team": "Turin",
+  "class": "E",
+  "points": 700,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2018,
+  "Date": "2018-07-15",
+  "Team": "Monash U",
+  "class": "E",
+  "points": 767,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2018,
+  "Date": "2018-07-15",
+  "Team": "München TU",
+  "class": "E",
+  "points": 666,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2018,
+  "Date": "2018-07-15",
+  "Team": "Bath U",
+  "class": "E",
+  "points": 442,
+  "place": 3,
+  "Spalte1": 1
  },
  {
   "discipline": "SKP",
@@ -4890,6 +5661,39 @@
   "source": "https:\/\/speedhive.mylaps.com\/Sessions\/4969233#byClass"
  },
  {
+  "discipline": "OVR",
+  "Event": "Lincoln",
+  "year": 2018,
+  "Date": "2018-06-23",
+  "Team": "Pittsburgh",
+  "class": "E",
+  "points": 800,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Lincoln",
+  "year": 2018,
+  "Date": "2018-06-23",
+  "Team": "Montreal ETS",
+  "class": "E",
+  "points": 772,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Lincoln",
+  "year": 2018,
+  "Date": "2018-06-23",
+  "Team": "Washington U",
+  "class": "E",
+  "points": 722,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
   "discipline": "ACC",
   "Event": "Lincoln",
   "year": 2018,
@@ -5048,6 +5852,72 @@
   "current WR": 4.627,
   "Spalte1": 0,
   "source": "https:\/\/www.sae.org\/attend\/student-events\/formula-sae-michigan\/awards-results"
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Japan",
+  "year": 2017,
+  "Date": "2017-09-08",
+  "Team": "Nagoya U",
+  "class": "E",
+  "points": 766,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Japan",
+  "year": 2017,
+  "Date": "2017-09-08",
+  "Team": "Jinzhou",
+  "class": "E",
+  "points": 563,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Japan",
+  "year": 2017,
+  "Date": "2017-09-08",
+  "Team": "Sendai",
+  "class": "E",
+  "points": 403,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Spain",
+  "year": 2017,
+  "Date": "2017-08-27",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 982,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Spain",
+  "year": 2017,
+  "Date": "2017-08-27",
+  "Team": "Stuttgart U",
+  "class": "E",
+  "points": 877,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Spain",
+  "year": 2017,
+  "Date": "2017-08-27",
+  "Team": "Karlsruhe KIT",
+  "class": "E",
+  "points": 836,
+  "place": 3,
+  "Spalte1": 1
  },
  {
   "discipline": "SKP",
@@ -5249,6 +6119,105 @@
   "note": "first FSG"
  },
  {
+  "discipline": "OVR",
+  "Event": "Czech",
+  "year": 2017,
+  "Date": "2017-08-05",
+  "Team": "Amberg-Weiden OTH",
+  "class": "E",
+  "points": 933,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Czech",
+  "year": 2017,
+  "Date": "2017-08-05",
+  "Team": "Tallinn U",
+  "class": "E",
+  "points": 872,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Czech",
+  "year": 2017,
+  "Date": "2017-08-05",
+  "Team": "Prague CTU",
+  "class": "E",
+  "points": 829,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2017,
+  "Date": "2017-08-03",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 949,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2017,
+  "Date": "2017-08-03",
+  "Team": "Karlsruhe KIT",
+  "class": "E",
+  "points": 892,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2017,
+  "Date": "2017-08-03",
+  "Team": "Stuttgart U",
+  "class": "E",
+  "points": 810,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2017,
+  "Date": "2017-08-03",
+  "Team": "Stuttgart U",
+  "class": "E",
+  "points": 918,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2017,
+  "Date": "2017-08-03",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 825,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2017,
+  "Date": "2017-08-03",
+  "Team": "München TU",
+  "class": "E",
+  "points": 791,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
   "discipline": "ACC",
   "Event": "Austria",
   "year": 2017,
@@ -5296,6 +6265,105 @@
   "curr class WR": 4.627,
   "current WR": 4.627,
   "Spalte1": 0
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Italy",
+  "year": 2017,
+  "Date": "2017-07-23",
+  "Team": "Stuttgart DHBW",
+  "class": "E",
+  "points": 962,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Italy",
+  "year": 2017,
+  "Date": "2017-07-23",
+  "Team": "Corvallis OSU",
+  "class": "E",
+  "points": 905,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Italy",
+  "year": 2017,
+  "Date": "2017-07-23",
+  "Team": "Turin",
+  "class": "E",
+  "points": 837,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "East",
+  "year": 2017,
+  "Date": "2017-07-23",
+  "Team": "Stuttgart U",
+  "class": "E",
+  "points": 969,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "East",
+  "year": 2017,
+  "Date": "2017-07-23",
+  "Team": "Karlsruhe KIT",
+  "class": "E",
+  "points": 937,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "East",
+  "year": 2017,
+  "Date": "2017-07-23",
+  "Team": "Delft TU",
+  "class": "E",
+  "points": 838,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2017,
+  "Date": "2017-07-23",
+  "Team": "Patras U",
+  "class": "E",
+  "points": 534,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2017,
+  "Date": "2017-07-23",
+  "Team": "Bilbao",
+  "class": "E",
+  "points": 386,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2017,
+  "Date": "2017-07-23",
+  "Team": "Stavanger",
+  "class": "E",
+  "points": 209,
+  "place": 3,
+  "Spalte1": 1
  },
  {
   "discipline": "SKP",
@@ -5604,6 +6672,39 @@
   "source": "https:\/\/speedhive.mylaps.com\/Sessions\/4505741#byClass"
  },
  {
+  "discipline": "OVR",
+  "Event": "Lincoln",
+  "year": 2017,
+  "Date": "2017-06-24",
+  "Team": "Philadelphia U",
+  "class": "E",
+  "points": 923,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Lincoln",
+  "year": 2017,
+  "Date": "2017-06-24",
+  "Team": "Massachutsetts IT",
+  "class": "E",
+  "points": 858,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Lincoln",
+  "year": 2017,
+  "Date": "2017-06-24",
+  "Team": "Campinas",
+  "class": "E",
+  "points": 666,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
   "discipline": "ACC",
   "Event": "Lincoln",
   "year": 2017,
@@ -5721,7 +6822,7 @@
   "curr class WR": 3.207,
   "current WR": 3.207,
   "Spalte1": 1,
-  "note": "new WR, curr WR, new E WR, curr E WR",
+  "note": "new WR,  new E WR",
   "source": "https:\/\/twitter.com\/FS_Spain\/status\/769769783726333952\/photo\/1"
  },
  {
@@ -8156,6 +9257,61 @@
   "source": "https:\/\/www.sae.org\/attend\/student-events\/formula-sae-michigan\/awards-results"
  },
  {
+  "discipline": "OVR",
+  "Event": "Australasia",
+  "year": 2012,
+  "Date": "2012-12-09",
+  "Team": "Swinburne",
+  "class": "E",
+  "points": 333,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Australasia",
+  "year": 2012,
+  "Date": "2012-12-09",
+  "Team": "Melbourne RMIT",
+  "class": "E",
+  "points": 230,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Italy",
+  "year": 2012,
+  "Date": "2012-09-17",
+  "Team": "Zwickau UAS",
+  "class": "E",
+  "points": 901,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Italy",
+  "year": 2012,
+  "Date": "2012-09-17",
+  "Team": "Darmstadt TU",
+  "class": "E",
+  "points": 894,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Italy",
+  "year": 2012,
+  "Date": "2012-09-17",
+  "Team": "Turin",
+  "class": "E",
+  "points": 868,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
   "discipline": "ACC",
   "Event": "Italy",
   "year": 2012,
@@ -8242,6 +9398,39 @@
   "Spalte1": 1,
   "note": "new E WR",
   "source": "http:\/\/www.fsae.com\/forums\/showthread.php?4036-Formula-SAE-Italy-Formula-Electric-Italy-2012"
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Spain",
+  "year": 2012,
+  "Date": "2012-09-02",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 926,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Spain",
+  "year": 2012,
+  "Date": "2012-09-02",
+  "Team": "Karlsruhe KIT",
+  "class": "E",
+  "points": 827,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Spain",
+  "year": 2012,
+  "Date": "2012-09-02",
+  "Team": "Stuttgart U",
+  "class": "E",
+  "points": 825,
+  "place": 3,
+  "Spalte1": 1
  },
  {
   "discipline": "ACC",
@@ -8415,6 +9604,72 @@
   "source": "https:\/\/web.archive.org\/web\/20161023083930\/http:\/\/fshungary.hu\/final-results-2012"
  },
  {
+  "discipline": "OVR",
+  "Event": "Hungary",
+  "year": 2012,
+  "Date": "2012-08-20",
+  "Team": "Karlsruhe KIT",
+  "class": "E",
+  "points": 838,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Hungary",
+  "year": 2012,
+  "Date": "2012-08-20",
+  "Team": "Turin",
+  "class": "E",
+  "points": 792,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Hungary",
+  "year": 2012,
+  "Date": "2012-08-20",
+  "Team": "Graz TU",
+  "class": "E",
+  "points": 738,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2012,
+  "Date": "2012-08-05",
+  "Team": "Delft TU",
+  "class": "E",
+  "points": 934,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2012,
+  "Date": "2012-08-05",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 874,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2012,
+  "Date": "2012-08-05",
+  "Team": "Stuttgart U",
+  "class": "E",
+  "points": 767,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
   "discipline": "SKP",
   "Event": "Germany",
   "year": 2012,
@@ -8551,6 +9806,39 @@
   "Spalte1": 0
  },
  {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2012,
+  "Date": "2012-07-20",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 827,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2012,
+  "Date": "2012-07-20",
+  "Team": "Stuttgart U",
+  "class": "E",
+  "points": 685,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2012,
+  "Date": "2012-07-20",
+  "Team": "Graz TU",
+  "class": "E",
+  "points": 548,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
   "discipline": "SKP",
   "Event": "Austria",
   "year": 2012,
@@ -8617,6 +9905,39 @@
   "curr class WR": 5.12,
   "current WR": 4.8255,
   "Spalte1": 0
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2012,
+  "Date": "2012-07-15",
+  "Team": "Delft TU",
+  "class": "E",
+  "points": 848,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2012,
+  "Date": "2012-07-15",
+  "Team": "Zwickau UAS",
+  "class": "E",
+  "points": 662,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2012,
+  "Date": "2012-07-15",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 522,
+  "place": 3,
+  "Spalte1": 1
  },
  {
   "discipline": "SKP",
@@ -8773,6 +10094,28 @@
   "current WR": 4.8255,
   "Spalte1": 0,
   "source": "https:\/\/www.sae.org\/attend\/student-events\/formula-sae-michigan\/awards-results"
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Australasia",
+  "year": 2011,
+  "Date": "2011-12-18",
+  "Team": "Melbourne RMIT",
+  "class": "E",
+  "points": 325,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Australasia",
+  "year": 2011,
+  "Date": "2011-12-18",
+  "Team": "Swinburne",
+  "class": "E",
+  "points": 247,
+  "place": 2,
+  "Spalte1": 1
  },
  {
   "discipline": "ACC",
@@ -9022,6 +10365,314 @@
   "note": "Wet pad record"
  },
  {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Delft TU",
+  "class": "E",
+  "points": 909,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 853,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Corvallis OSU",
+  "class": "E",
+  "points": 746,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "München TU",
+  "class": "E",
+  "points": 732,
+  "place": 4,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Karlsruhe KIT",
+  "class": "E",
+  "points": 675,
+  "place": 5,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Eindhoven TU",
+  "class": "E",
+  "points": 598,
+  "place": 6,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Stuttgart U",
+  "class": "E",
+  "points": 592,
+  "place": 7,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Zwickau UAS",
+  "class": "E",
+  "points": 483,
+  "place": 8,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Graz TU",
+  "class": "E",
+  "points": 456,
+  "place": 9,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Deggendorf IT",
+  "class": "E",
+  "points": 368,
+  "place": 10,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Diepholz",
+  "class": "E",
+  "points": 299,
+  "place": 11,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "München UAS",
+  "class": "E",
+  "points": 265,
+  "place": 12,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Lisboa",
+  "class": "E",
+  "points": 251,
+  "place": 13,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Köln TH",
+  "class": "E",
+  "points": 229,
+  "place": 14,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Dresden TU",
+  "class": "E",
+  "points": 228,
+  "place": 15,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Bayreuth U",
+  "class": "E",
+  "points": 210,
+  "place": 16,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Siegen U",
+  "class": "E",
+  "points": 200,
+  "place": 17,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Wiesbaden",
+  "class": "E",
+  "points": 197,
+  "place": 18,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Karlsruhe UAS",
+  "class": "E",
+  "points": 182,
+  "place": 19,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Regensburg UAS",
+  "class": "E",
+  "points": 171,
+  "place": 20,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Osnabrück",
+  "class": "E",
+  "points": 167,
+  "place": 21,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Landshut AUS",
+  "class": "E",
+  "points": 167,
+  "place": 22,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Stockholm",
+  "class": "E",
+  "points": 157,
+  "place": 23,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Clausthal",
+  "class": "E",
+  "points": 133,
+  "place": 24,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Hannover U",
+  "class": "E",
+  "points": 131,
+  "place": 25,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Bratislava",
+  "class": "E",
+  "points": 84,
+  "place": 26,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Madrid",
+  "class": "E",
+  "points": 54,
+  "place": 27,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Germany",
+  "year": 2011,
+  "Date": "2011-08-07",
+  "Team": "Aachen RWTH",
+  "class": "E",
+  "points": 46,
+  "place": 28,
+  "Spalte1": 1
+ },
+ {
   "discipline": "SKP",
   "Event": "Austria",
   "year": 2011,
@@ -9093,6 +10744,72 @@
   "curr class WR": 5.12,
   "current WR": 4.878,
   "Spalte1": 0
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2011,
+  "Date": "2011-07-30",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 678,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2011,
+  "Date": "2011-07-30",
+  "Team": "Eindhoven TU",
+  "class": "E",
+  "points": 395,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2011,
+  "Date": "2011-07-30",
+  "Team": "München TU",
+  "class": "E",
+  "points": 372,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2011,
+  "Date": "2011-07-30",
+  "Team": "Corvallis OSU",
+  "class": "E",
+  "points": 302,
+  "place": 4,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2011,
+  "Date": "2011-07-30",
+  "Team": "Graz TU",
+  "class": "E",
+  "points": 180,
+  "place": 5,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "Austria",
+  "year": 2011,
+  "Date": "2011-07-30",
+  "Team": "München UAS",
+  "class": "E",
+  "points": 173,
+  "place": 6,
+  "Spalte1": 1
  },
  {
   "discipline": "SKP",
@@ -9169,6 +10886,116 @@
   "curr class WR": 5.12,
   "current WR": 4.878,
   "Spalte1": 0
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "Delft TU",
+  "class": "E",
+  "points": 910,
+  "place": 1,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "Zürich ETH",
+  "class": "E",
+  "points": 728,
+  "place": 2,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "Eindhoven TU",
+  "class": "E",
+  "points": 552,
+  "place": 3,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "Zwickau UAS",
+  "class": "E",
+  "points": 549,
+  "place": 4,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "London",
+  "class": "E",
+  "points": 433,
+  "place": 5,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "Darmstadt TU",
+  "class": "E",
+  "points": 211,
+  "place": 6,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "Graz TU",
+  "class": "E",
+  "points": 201,
+  "place": 7,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "Bratislava",
+  "class": "E",
+  "points": 192,
+  "place": 8,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "Manchester",
+  "class": "E",
+  "points": 133,
+  "place": 9,
+  "Spalte1": 1
+ },
+ {
+  "discipline": "OVR",
+  "Event": "UK",
+  "year": 2011,
+  "Date": "2011-07-17",
+  "Team": "Reykjavik",
+  "class": "E",
+  "points": 53,
+  "place": 10,
+  "Spalte1": 1
  },
  {
   "discipline": "ACC",
@@ -11469,7 +13296,15 @@
 ],
 "Events":[
  {
-  "2023": 2022,
+  "2024": 2023,
+  "Germany": "Germany",
+  "Italy": "Italy",
+  "East": "East",
+  "Austria": "Austria",
+  "Netherlands": "Netherlands"
+ },
+ {
+  "2024": 2022,
   "Germany": "Germany",
   "Italy": "Italy",
   "East": "East",
@@ -11478,7 +13313,7 @@
   "Netherlands": "Netherlands"
  },
  {
-  "2023": 2021,
+  "2024": 2021,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11492,7 +13327,7 @@
   "Column16": "Nevada"
  },
  {
-  "2023": 2019,
+  "2024": 2019,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11509,7 +13344,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2018,
+  "2024": 2018,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11526,7 +13361,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2017,
+  "2024": 2017,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11544,7 +13379,7 @@
   "Column20": "Brazil"
  },
  {
-  "2023": 2016,
+  "2024": 2016,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11559,7 +13394,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2015,
+  "2024": 2015,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11573,7 +13408,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2014,
+  "2024": 2014,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11587,7 +13422,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2013,
+  "2024": 2013,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11601,7 +13436,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2012,
+  "2024": 2012,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11614,7 +13449,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2011,
+  "2024": 2011,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11627,7 +13462,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2010,
+  "2024": 2010,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11640,7 +13475,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2009,
+  "2024": 2009,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11652,7 +13487,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2008,
+  "2024": 2008,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11663,7 +13498,7 @@
   "Column19": "Japan"
  },
  {
-  "2023": 2007,
+  "2024": 2007,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11674,7 +13509,7 @@
   "Column20": "Brazil"
  },
  {
-  "2023": 2006,
+  "2024": 2006,
   "Column2": "Michigan",
   "Germany": "Germany",
   "Italy": "Italy",
@@ -11685,7 +13520,7 @@
   "Column20": "Brazil"
  },
  {
-  "2023": 2005,
+  "2024": 2005,
   "Column2": "Michigan",
   "Germany": "(Germany)",
   "Italy": "Italy",
@@ -11695,7 +13530,7 @@
   "Column20": "Brazil"
  },
  {
-  "2023": 2004,
+  "2024": 2004,
   "Column2": "Michigan",
   "Column10": "UK",
   "Column12": "Australasia",
@@ -11703,55 +13538,55 @@
   "Column20": "Brazil"
  },
  {
-  "2023": 2003,
+  "2024": 2003,
   "Column2": "Michigan",
   "Column10": "UK",
   "Column12": "Australasia",
   "Column19": "Japan"
  },
  {
-  "2023": 2002,
+  "2024": 2002,
   "Column2": "Michigan",
   "Column10": "UK",
   "Column12": "Australasia"
  },
  {
-  "2023": 2001,
+  "2024": 2001,
   "Column2": "(Michigan)",
   "Column10": "UK",
   "Column12": "Australasia"
  },
  {
-  "2023": 2000,
+  "2024": 2000,
   "Column2": "(Michigan)",
   "Column10": "UK"
  },
  {
-  "2023": 1999,
+  "2024": 1999,
   "Column2": "Michigan"
  },
  {
-  "2023": 1998,
+  "2024": 1998,
   "Column2": "Michigan"
  },
  {
-  "2023": 1997,
+  "2024": 1997,
   "Column2": "Michigan"
  },
  {
-  "2023": 1996,
+  "2024": 1996,
   "Column2": "Michigan"
  },
  {
-  "2023": 1995,
+  "2024": 1995,
   "Column2": "Michigan"
  },
  {
-  "2023": 1994,
+  "2024": 1994,
   "Column2": "Michigan"
  },
  {
-  "2023": 1993,
+  "2024": 1993,
   "Column2": "Michigan"
  },
  null,
@@ -11761,7 +13596,7 @@
  null,
  null,
  {
-  "Germany": "ACC & SKP, ECD"
+  "Germany": "ACC & SKP, ECD classes"
  },
  {
   "Germany": "ACC, ECD"
