@@ -9,7 +9,8 @@ function findWorldRecord(inputTable){
     }
     let indecesToDelete = [];
     for(let i = 1; i<inputTable.length;i++){
-        if(inputTable[i]['adj time']<currRecord){
+
+        if((inputTable[i]['adj time']<currRecord)&&(typeof inputTable[i]['adj time'] != 'undefined')){
             currRecord = inputTable[i]['adj time'];
         }else{
             indecesToDelete.push(i);
